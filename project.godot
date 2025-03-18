@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="asd vr"
+run/main_scene="uid://djdxh1bb37nn7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,3 +24,8 @@ version_control/autoload_on_startup=true
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[xr]
+
+openxr/enabled=true
+shaders/enabled=true
