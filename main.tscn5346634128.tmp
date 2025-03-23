@@ -37,6 +37,8 @@ shadow_enabled = true
 [node name="XROrigin3D" parent="." instance=ExtResource("2_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0285538, 0.231038, 0.159394)
 script = ExtResource("3_lquwl")
+move_speed = null
+look_sensitivity = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_7mycd")
