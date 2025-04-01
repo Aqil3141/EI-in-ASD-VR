@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b1c0f7md2xeb7"]
+
+[node name="Language" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 84.0
+offset_right = 699.0
+offset_bottom = 174.0
+text = "English
+"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 365.0
+offset_top = 190.0
+offset_right = 696.0
+offset_bottom = 278.0
+text = "Arabic"
+
+[node name="Back To Menu" type="Button" parent="."]
+offset_left = 364.0
+offset_top = 291.0
+offset_right = 694.0
+offset_bottom = 392.0
+text = "Back to Menu"
