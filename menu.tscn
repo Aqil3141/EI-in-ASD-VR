@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ae38xaho4hn"]
+
+[ext_resource type="Script" uid="uid://bq8n7b80fedla" path="res://menu.gd" id="1_lti8b"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="LoginPage" type="Button" parent="."]
+layout_mode = 0
+offset_right = 255.0
+offset_bottom = 60.0
+text = "Login"
+
+[node name="OptionsPage" type="Button" parent="."]
+offset_left = -1.0
+offset_top = 71.0
+offset_right = 254.0
+offset_bottom = 131.0
+text = "Options"
+
+[connection signal="button_down" from="LoginPage" to="." method="_on_login_page_button_down"]
+[connection signal="button_down" from="OptionsPage" to="." method="_on_options_page_button_down"]

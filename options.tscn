@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu2fx48aqtd2t"]
+
+[ext_resource type="Script" uid="uid://cw55elbysvt8e" path="res://options.gd" id="1_5v8ap"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5v8ap")
+
+[node name="Language" type="Button" parent="."]
+offset_right = 255.0
+offset_bottom = 60.0
+text = "Language"
+
+[node name="Back To Menu" type="Button" parent="."]
+offset_top = 68.0
+offset_right = 255.0
+offset_bottom = 128.0
+text = "Back to Menu"
+
+[connection signal="button_down" from="Language" to="." method="_on_language_button_down"]
+[connection signal="button_down" from="Back To Menu" to="." method="_on_back_to_menu_button_down"]
