@@ -18,6 +18,7 @@ text = "English
 "
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 365.0
 offset_top = 190.0
 offset_right = 696.0
@@ -25,6 +26,7 @@ offset_bottom = 278.0
 text = "Arabic"
 
 [node name="Back To Menu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 364.0
 offset_top = 291.0
 offset_right = 694.0
