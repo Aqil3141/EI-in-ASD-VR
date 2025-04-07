@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://djdxh1bb37nn7"]
+[gd_scene load_steps=17 format=3 uid="uid://djdxh1bb37nn7"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b2uo4wjjo027p" path="res://player.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="4_1bvp3"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5vw27"]
 points = PackedVector3Array(0.5, 0.5, 0.25, 0.5, 0.5, -0.25, -0.5, 0.5, 0.25, 0.5, -0.5, 0.25, 0.5, -0.5, -0.25, -0.5, 0.5, -0.25, -0.5, -0.5, 0.25, -0.5, -0.5, -0.25)
@@ -33,10 +34,24 @@ size = Vector3(0.1, 0.1, 0.1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4c57u"]
 points = PackedVector3Array(0.05, 0.05, 0.05, 0.05, 0.05, -0.05, -0.05, 0.05, 0.05, 0.05, -0.05, 0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+transparency = 1
+albedo_texture = ExtResource("4_1bvp3")
+emission = Color(0.0253638, 0.0253638, 0.0253638, 1)
+emission_energy_multiplier = 8.19
+
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.323395, -0.381334, 0, -0.762668, 0.64679, -0.5, 0.560136, 0.66049, 0, 2.61166, 1.09145)
+transform = Transform3D(-0.725693, 0.668073, 0.164463, 0.329617, 0.127766, 0.93543, 0.603922, 0.733045, -0.312927, 0, 7.2277, -1.60259)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.745848, 0.664032, -0.0526533, -0.220428, -0.171448, 0.960217, 0.628588, 0.727782, 0.274245, 0, 6.67883, -2.90692)
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="StartXR" parent="." instance=ExtResource("1_ig7tw")]
@@ -60,19 +75,19 @@ mesh = SubResource("QuadMesh_h2yge")
 skeleton = NodePath("")
 
 [node name="Wall-2" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.0625, 0.00834813, -0.0984271, -0.990817)
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.0625, 0.00834813, -0.102316, -0.990817)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
 
 [node name="Wall-3" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-4.37114e-08, 0, -0.0625, 0, 0.25, 0, 1, 0, -2.73196e-09, 0.484384, -0.0998777, -0.50712)
+transform = Transform3D(-4.37114e-08, 0, -0.0625, 0, 0.25, 0, 1, 0, -2.73196e-09, 0.484384, -0.103286, -0.50712)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
 
 [node name="Wall-4" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-4.37114e-08, 0, 0.0625, 0, 0.25, 0, -1, 0, -2.73196e-09, -0.492173, -0.0998777, -0.503689)
+transform = Transform3D(-4.37114e-08, 0, 0.0625, 0, 0.25, 0, -1, 0, -2.73196e-09, -0.492173, -0.103649, -0.503689)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
@@ -123,5 +138,204 @@ mesh = SubResource("BoxMesh_kek77")
 skeleton = NodePath("../..")
 
 [node name="PickableObject#CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00288314, 0.607676, -1.13793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00288314, 0.607676, -1.24198)
 shape = SubResource("ConvexPolygonShape3D_4c57u")
+
+[node name="Chairs" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0455037, -0.0139885, 0.493694)
+
+[node name="Chair" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.11591, 0, 0.573319)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair2" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.72135, 0, 0.573319)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair2"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, -1.66029e-10, 0.00109951, -0.999999, 1.50996e-07, -0.999999, -0.00109951, 0.40622, 0.686751, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair3" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.74464, 0, 0.573319)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair3"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair4" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.266, 0, 0.573319)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair4"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair5" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.11591, 0, 2.19245)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair5"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair6" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.72135, 0, 2.19245)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair6"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, -1.66029e-10, 0.00109951, -0.999999, 1.50996e-07, -0.999999, -0.00109951, 0.40622, 0.683191, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair7" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.74464, 0, 2.19245)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair7"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair8" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.266, 0, 2.19245)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair8"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair9" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.11591, 0, -1.0628)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair9"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair10" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.72135, 0, -1.0628)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair10"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair11" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.74464, 0, -1.0628)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair11"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair12" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.266, 0, -1.0628)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair12"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair14" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.12963, 0, 0.672761)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair14"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="Chair15" type="StaticBody3D" parent="Chairs"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.12963, 0, 2.18887)
+collision_layer = 7
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chairs/Chair15"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0.40622, 0.684971, -1.51276)
+mesh = SubResource("PlaneMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+shape = SubResource("ConvexPolygonShape3D_5vw27")
