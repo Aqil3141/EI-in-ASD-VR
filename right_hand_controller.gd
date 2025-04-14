@@ -1,10 +1,5 @@
 extends XRController3D
-<<<<<<< HEAD
 
-func _physics_process(delta: float) -> void:
-	if $RayCast3D.is_colliding():
-		print("is colliding")
-=======
 var targetObject = null
 
 func _ready() -> void:
@@ -26,4 +21,3 @@ func btnPressedLeft(name:String) -> void:
 	if name == "trigger_click":
 		if targetObject:
 			targetObject.queue_free()
->>>>>>> card-raycast
