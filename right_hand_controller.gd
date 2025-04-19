@@ -2,8 +2,11 @@
 extends XRController3D
 
 #dependency injection TODO figure out how this works.
-var current_question = {}
 
+#potential fix to this issue is creating a global variable
+var current_question = Globals.current_question
+
+#depricated remove
 func set_question_data(q):
 	current_question = q
 
@@ -19,8 +22,12 @@ func set_label_node(label: Label3D):
 
 func check_answer(selected: String):
 	var correct = current_question["answer"]
-	var main = get_parent()
-	var label = main.get_node("")
+	#var main = get_parent()
+	#var label = main.get_node("")
+	if selected == correct:
+		print("correct!")
+	else:
+		print("incorrect!")
 	
 
 func _physics_process(delta: float) -> void:
