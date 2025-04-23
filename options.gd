@@ -24,8 +24,8 @@ func _ready():
 	#randomise order of options
 	options.shuffle()
 	
-	#for i in range(options.size()):
-	for i in range(2):
+	for i in range(options.size()):
+	#for i in range(2):
 		#retrieve option panels depending on the current loop index
 		var panel = get_node("Option_%d" % i)
 		print("Option_%d"%i)
@@ -33,6 +33,8 @@ func _ready():
 		
 		#assign texture
 		var material := StandardMaterial3D.new()
+		
+		#check if texture is working (debug)
 		print("loading image: ", emotion_data["image"])
 		var texture = load(emotion_data["image"])
 		print("Loaded texture: ", texture)
@@ -47,4 +49,5 @@ func _ready():
 		
 		#store data within the option_%d object so that the raycast controller can retrieve it.
 		panel.set_meta("emotion", emotion_data["emotion"])
+		print(emotion_data["emotion"])
 		

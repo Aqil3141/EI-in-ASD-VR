@@ -15,6 +15,7 @@ func _ready():
 
 func generate_question():
 	var prompt_emotion = EMOTIONS[randi() % EMOTIONS.size()]
+	print(prompt_emotion)
 	var options = []
 	
 	for emotion in EMOTIONS:
