@@ -36,7 +36,8 @@ func _physics_process(delta: float) -> void:
 		targetObject = c
 		#prints name of raycasted object
 		if targetObject:
-			print(targetObject.name)
+			#print(targetObject.name)
+			pass
 	else:
 		targetObject = null
 	
