@@ -1,7 +1,14 @@
 extends Node
+
 const EMOTIONS = ["angry", "fear", "happy", "sad"]
+
 const BASE_PATH = "res://images/"
 var current_question: Dictionary
+
+var target_emotion = "happy" #hardcode for now, change dynamically thru menus later
+var image_pool = []
+var current_round_images = []
+var correct_remaining = 0
 
 #change depending on how many images per subfolder there are. there MUST be the same amount
 #of expression images PER FOLDER or this WILL break. - danb
@@ -12,6 +19,24 @@ const NUM_IMAGES_PER_SUBFOLDER = 4
 func _ready():
 	#seed RNG based on system time
 	randomize()
+	generate_image_pool()
+
+#emotion will be passed in from an external array accessing globals that will use
+#the target_emotion variable in globals
+
+ 
+func generate_image_pool():
+	image_pool.clear()
+	
+	for emotion in EMOTIONS:
+		for i in NUM_IMAGES_PER_SUBFOLDER:
+			var image_path = "%s%s/%s_%d.jpg" % [BASE_PATH, emotion, emotion, i]
+			image_pool.append({
+				"emotion": emotion,
+				"image": image_path
+			})
+	
+	image_pool.shuffle()
 
 func generate_question():
 	var prompt_emotion = EMOTIONS[randi() % EMOTIONS.size()]

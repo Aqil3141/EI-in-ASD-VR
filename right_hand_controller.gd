@@ -5,13 +5,11 @@ extends XRController3D
 
 #potential fix to this issue is creating a global variable
 var current_question
-
-#depricated remove
-func set_question_data(q):
-	current_question = q
+#
+#func set_question_data(q):
+	#current_question = q
 
 var targetObject = null
-#
 
 #detects if button is controller simulator button is pressed
 func _ready() -> void:
@@ -33,7 +31,8 @@ func check_answer(selected: String):
 		print("correct!")
 	else:
 		print("incorrect!")
-	
+
+
 
 func _physics_process(delta: float) -> void:
 	if $RayCast3D.is_colliding():
