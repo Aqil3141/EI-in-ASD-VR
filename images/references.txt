@@ -1,0 +1,16 @@
+happy_1 : https://www.freepik.com/free-photo/smiley-little-boy-isolated-pink_14659035.htm
+happy_2 : https://www.freepik.com/free-photo/portrait-young-blonde-woman_11014618.htm
+happy_3 : https://www.allprodad.com/wp-content/uploads/2021/03/05-12-21-happy-people.jpg
+happy_4 : https://us.images.westend61.de/0000807103pw/smiling-man-standing-on-city-street-BSZF00088.jpg
+sad_1 : https://www.freepik.com/free-photo/woman-crying-after-fight-with-her-husband_13944328.htm#fromView=search&page=1&position=2&uuid=46e325d1-05b2-46a7-adcb-f13f682755eb&query=sad+person+looking+at+camera
+sad_2 : https://www.freepik.com/free-photo/sad-student-posing-against-white-wall_11140130.htmhttps://www.freepik.com/free-photo/low-angle-sad-boy-sitting-outdoors_30268203.htm
+sad_3 : https://www.freepik.com/free-photo/low-angle-sad-boy-sitting-outdoors_30268203.htm
+sad_4 : https://www.freepik.com/free-photo/troubled-displeased-bearded-man-frowns-face-feels-sad-distressed-upset-being-bored-sitting-quarantine-unhappy-miss-good-chance-dressed-casually-isolated-yellow-wall_13187248.htm
+angry_1 : https://www.freepik.com/free-photo/handsome-middle-age-man-wearing-elegant-shirt-background-shouting-frustrated-with-rage-hands-trying-strangle-yelling-mad_47772164.htm
+angry_2 : https://www.freepik.com/free-photo/annoyed-angry-stylish-girlfriend-shaking-hands-outraged-arguing-complaining-standing-furious_22405745.htm
+angry_3 : https://jp.pinterest.com/pin/642818546832810000/
+angry_4 : https://www.freepik.com/free-photo/portrait-outraged-angry-pissed-strong-masculine-redhead-male-with-bristle-clenching-fists-anger-shouting-wrinkling-nose-being-rage-about-punch-someone_10402089.htm
+fear_1 : https://miro.medium.com/v2/resize:fit:1100/format:webp/0*3Hk5zkx7FPgy3WsK.jpeg
+fear_2 : https://www.freepik.com/free-photo/alarmed-scared-young-woman-scream-hold-hands-head-distressed_9474338.htm
+fear_3 : https://www.freepik.com/free-photo/close-up-portrait-frightened-woman-denim-covering-her-face-with-hands-being-shocked-young-female-screaming-panic-being-trouble-can-t-believe-truth-emotions-concept_8687948.htm
+fear_4 : https://www.freepik.com/free-photo/man-looks-with-panic-trembles-from-fear-afraids-something-holds-hands-face-keeps-jaw-dropped-wears-spectacles-denim-jacket-beige-studio_19659208.htm
