@@ -25,7 +25,8 @@ func set_label_node(label: Label3D):
 	label_node = label
 
 func next_question():
-	var options = get_node("/root/Main/Options")
+	#var options = get_node("/root/Main/Options")
+	var options = get_node("/root/Main/Main/Options")
 	options.generate_new_question()
 	options.display_pictures()
 	current_question = Globals.current_question
