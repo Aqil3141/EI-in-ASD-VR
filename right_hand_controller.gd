@@ -26,13 +26,18 @@ func set_label_node(label: Label3D):
 
 func next_question():
 	#var options = get_node("/root/Main/Options")
-	var options = get_node("/root/Main/Main/Options")
+	var options;
+	if is_instance_valid(get_node("/root/Main/Main/Options")):
+		options = get_node("/root/Main/Main/Options")
+	else:
+		options = get_node("/root/Main/Node3D/Main/Options") #hard coded path
 	options.generate_new_question()
 	options.display_pictures()
 	current_question = Globals.current_question
 	
 	
-	
+
+
 func check_answer(selected: String):
 	var correct = current_question["answer"]
 	print("The answer is:" + correct)
