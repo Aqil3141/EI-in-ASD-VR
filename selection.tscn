@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmdm1ejh7a8k4"]
+[gd_scene load_steps=6 format=3 uid="uid://cmdm1ejh7a8k4"]
 
 [ext_resource type="Script" uid="uid://bh0lbehyxvgu4" path="res://selection.gd" id="1_7b2rf"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_y36no"]
-[ext_resource type="PackedScene" path="res://player_button.tscn" id="3_7b2rf"]
 [ext_resource type="Script" path="res://Button_Options.gd" id="5_noibv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_h2yge"]
@@ -19,9 +18,6 @@ light_energy = 0.5
 shadow_enabled = true
 
 [node name="StartXR" parent="." instance=ExtResource("2_y36no")]
-
-[node name="XROrigin3D" parent="." instance=ExtResource("3_7b2rf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02613, -0.430331)
 
 [node name="Options" type="Node3D" parent="."]
 transform = Transform3D(0.414638, 0, 0, 0, 0.414638, 0, 0, 0, 1, -0.238861, 0.996822, -1.7565)

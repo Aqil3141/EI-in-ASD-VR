@@ -57,8 +57,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		targetObject = null
 	#
-	if $RayCast3D.is_colliding() && Input.is_action_just_pressed("trigger_click"):
-		var hit = $RayCast3D.get_collider()
+	#if $RayCast3D.is_colliding() && Input.is_action_just_pressed("trigger_click"):
+		#var hit = $RayCast3D.get_collider()
 		#
 		##use this statement for any universal trigger click events, 
 		##and define which object meta depending on event context -danb
@@ -68,9 +68,9 @@ func _physics_process(delta: float) -> void:
 		## it does not contain the "emotion" metadata, hence why this can be universally used.
 		## -danb
 	#
-		if hit and hit.has_meta("emotion"):
-			var selected_emotion = hit.get_meta("emotion")
-			check_answer(selected_emotion)
+		#if hit and hit.has_meta("emotion"):
+			#var selected_emotion = hit.get_meta("emotion")
+			#check_answer(selected_emotion)
 		
 		
 

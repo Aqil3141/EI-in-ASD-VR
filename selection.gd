@@ -9,3 +9,5 @@ func _ready():
 	#var options = $Options
 	#var controller = $XROrigin3D/RightHandController
 	#options.set_controller(controller)
+
+#XROrigin3D/player_button.tscn has to be a child node of the selection.tscn node
