@@ -14,5 +14,5 @@ func _ready():
 #XROrigin3D/player_button.tscn has to be a child node of the selection.tscn node
 #Main |
 #     -> XROrigin3D (player_button.tscn) 
-func send_signal(bool):
-	emit_signal("result_checked", bool)
+func send_signal(String):
+	emit_signal("result_checked", String)

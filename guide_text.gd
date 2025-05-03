@@ -4,8 +4,9 @@ func _ready():
 	get_parent().connect("result_checked", Callable(self, "_on_result_checked"))
 	print("Signal connected!")
 
-func _on_result_checked(is_correct: bool):
-	if is_correct:
-		self.text = "Good job!"
-	else:
-		self.text = "Wrong!"
+func _on_result_checked(count: String):
+	if int(count) < 4:
+		self.text = "Good job! " + count + "/4"
+	if int(count) >= 4:
+		self.text = "Wonderful! You have finished the tutorial"
+	

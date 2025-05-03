@@ -2,6 +2,7 @@
 extends Node3D
 var controller = null
 var current_question = Globals.generate_question()
+var count = 0;
 signal result_checked(is_correct: bool)
 #
 #func set_controller(ctrl):
@@ -13,7 +14,9 @@ func _ready():
 
 func generate_new_question():
 	current_question = Globals.generate_question()
-	get_parent().send_signal(true)
+	count += 1
+	get_parent().send_signal(str(count))
+	$AudioStreamPlayer.play()
 
 func display_pictures():
 	$CurrentQuestion.text = current_question["question"]

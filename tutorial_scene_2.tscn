@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0gmb16k6vwig"]
+[gd_scene load_steps=20 format=3 uid="uid://d0gmb16k6vwig"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_w5e7v"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_ht20w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://yx2x7dkknq75" path="res://guide_text.gd" id="3_avbro"]
 [ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="3_ljpkq"]
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="4_avbro"]
+[ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://audio/Welcome.mp3" id="7_cym11"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5vw27"]
 points = PackedVector3Array(0.5, 0.5, 0.25, 0.5, 0.5, -0.25, -0.5, 0.5, 0.25, 0.5, -0.5, 0.25, 0.5, -0.5, -0.25, -0.5, 0.5, -0.25, -0.5, -0.5, 0.25, -0.5, -0.5, -0.25)
@@ -59,15 +60,16 @@ shadow_enabled = true
 [node name="StartXR" parent="." instance=ExtResource("1_w5e7v")]
 
 [node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974716, 0, -2.98587)
 
 [node name="Main" parent="Node3D" instance=ExtResource("2_ljpkq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.189098)
 
 [node name="XROrigin3D" parent="Node3D/Main" instance=ExtResource("4_avbro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02837, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02837, 0.415204)
 
 [node name="Label3D" type="Label3D" parent="Node3D/Main"]
-transform = Transform3D(0.691803, 0, 0.722086, 0, 1, 0, -0.722086, 0, 0.691803, -1.90509, 1.25569, -1.5691)
+transform = Transform3D(0.999989, 0, -0.00459015, 0, 1, 0, 0.00459015, 0, 0.999989, -2.27649, 1.25569, -1.96822)
 text = "Welcome to 
 tutorial stage 2"
 script = ExtResource("3_avbro")
@@ -352,3 +354,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Chairs/Chair15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
 shape = SubResource("ConvexPolygonShape3D_5vw27")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cym11")
+autoplay = true
