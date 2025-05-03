@@ -46,7 +46,7 @@ func check_answer(selected: String):
 		return 0
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if $RayCast3D.is_colliding():
 		var c = $RayCast3D.get_collider()
 		targetObject = c
@@ -74,9 +74,8 @@ func _physics_process(delta: float) -> void:
 		
 		
 
-func btnPressedLeft(name:String) -> void:
-	print(name)
-	if name == "trigger_click":
+func btnPressedLeft(name_action:String) -> void:
+	if name_action == "trigger_click":
 		if targetObject and targetObject.has_meta("emotion"):
 			var selected_emotion = targetObject.get_meta("emotion")
 			if check_answer(selected_emotion):
