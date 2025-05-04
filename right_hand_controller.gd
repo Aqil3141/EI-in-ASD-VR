@@ -41,11 +41,9 @@ func check_answer(selected: String):
 	#var main = get_parent()
 	#var label = main.get_node("")
 	if selected == correct:
-		print("correct!")
-		return 1
+		return 1 #correct
 	else:
-		print("incorrect!")
-		return 0
+		return 0 #incorrect
 	
 
 func _physics_process(_delta: float) -> void:
@@ -58,6 +56,7 @@ func _physics_process(_delta: float) -> void:
 			pass
 	else:
 		targetObject = null
+	
 	#
 	#if $RayCast3D.is_colliding() && Input.is_action_just_pressed("trigger_click"):
 		#var hit = $RayCast3D.get_collider()
@@ -82,5 +81,8 @@ func btnPressedLeft(name_action:String) -> void:
 			var selected_emotion = targetObject.get_meta("emotion")
 			if check_answer(selected_emotion):
 				next_question()
-		if targetObject is StaticBody3D and targetObject.name == "Proceed":
-			print("StaticBody3D hit: ", targetObject.name)
+		if targetObject and targetObject.name == "Proceed":
+			get_tree().change_scene_to_file("res://menu.tscn")
+		if targetObject and targetObject.name == "Restart":
+			get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
+		

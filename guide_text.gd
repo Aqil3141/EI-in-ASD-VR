@@ -12,3 +12,4 @@ func _on_result_checked(count: String):
 		self.text = "Wonderful! You have finished the tutorial"
 		self.text += "\nClick on the 'Proceed' button to move to the next stage"
 		get_parent().get_node("Proceed").make_visible()
+		get_parent().get_node("Restart").make_visible()

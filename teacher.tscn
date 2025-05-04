@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c54otj1c5cn4j"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cym11"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jw8fm"]
+
+[node name="Teacher" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_cym11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_jw8fm")
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0377469, 0.538393, 0.502708)
+text = ". .
+-"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0377469, 0, 0.502708)
+text = "teacher"

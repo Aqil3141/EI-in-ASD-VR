@@ -1,10 +1,7 @@
-extends StaticBody3D
+extends Area3D
 
 func make_visible():
-	self.visible = true
-	# Disable
+	$MeshInstance3D.visible = true
 	$CollisionShape3D.disabled = false
-
-func on_interact():
-	print("You've interacted with me!")
-	
+	$CollisionShape3D.visible = true
+	$Label3D.visible = true

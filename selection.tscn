@@ -29,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.602493, 1.73753, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Options"]
 stream = ExtResource("4_umr4q")
-volume_db = -25.0
+volume_db = -40.0
 
 [node name="Option_0" type="StaticBody3D" parent="Options"]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.0860622, 0.822095, -0.174061)

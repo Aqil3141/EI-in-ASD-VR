@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0gmb16k6vwig"]
+[gd_scene load_steps=25 format=3 uid="uid://d0gmb16k6vwig"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_w5e7v"]
 [ext_resource type="PackedScene" uid="uid://cmdm1ejh7a8k4" path="res://selection.tscn" id="2_ljpkq"]
@@ -7,13 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="4_avbro"]
 [ext_resource type="Script" uid="uid://ckfg7372pxt7f" path="res://exit.gd" id="5_cym11"]
 [ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://audio/Welcome.mp3" id="7_cym11"]
+[ext_resource type="PackedScene" uid="uid://c54otj1c5cn4j" path="res://teacher.tscn" id="8_jw8fm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wvgr3"]
+material = SubResource("StandardMaterial3D_jw8fm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_avbro"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cqs6p"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5vw27"]
 points = PackedVector3Array(0.5, 0.5, 0.25, 0.5, 0.5, -0.25, -0.5, 0.5, 0.25, 0.5, -0.5, 0.25, 0.5, -0.5, -0.25, -0.5, 0.5, -0.25, -0.5, -0.5, 0.25, -0.5, -0.5, -0.25)
 
 [sub_resource type="QuadMesh" id="QuadMesh_h2yge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvgr3"]
+albedo_color = Color(0.392157, 0.196078, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_1bvp3"]
 
@@ -32,6 +44,9 @@ size = Vector3(1, 0.620239, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_272bh"]
 size = Vector3(1, 1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqs6p"]
+albedo_color = Color(0.630054, 0.329657, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
 
@@ -70,22 +85,53 @@ text = "Welcome to
 tutorial stage 2"
 script = ExtResource("3_avbro")
 
-[node name="Proceed" type="StaticBody3D" parent="Node3D/Main"]
-transform = Transform3D(0.233965, 0.0948879, -0.431575, 0, 0.488336, 0.107368, 0.441883, -0.0502405, 0.228507, 1.19781, 0.638345, -0.313541)
-visible = false
+[node name="Proceed" type="Area3D" parent="Node3D/Main"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0153449, 1.4298, -1.46758)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("5_cym11")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Main/Proceed"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0.0850248, -0.11746, 0.640837)
+visible = false
+mesh = SubResource("PlaneMesh_wvgr3")
+skeleton = NodePath("../CollisionShape3D")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Main/Proceed"]
-transform = Transform3D(2, -7.45058e-08, 5.96046e-08, 5.96046e-08, 2, 2.98023e-08, 5.96046e-08, -1.49012e-08, 2, 0.340724, -0.119654, 0.507677)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756502, -0.0699031, 0.652789)
+visible = false
 shape = SubResource("BoxShape3D_avbro")
 disabled = true
 
 [node name="Label3D" type="Label3D" parent="Node3D/Main/Proceed"]
-transform = Transform3D(0.998953, 0, -0.0457466, 0, 1, 0, 0.0457466, 0, 0.998953, 0, 0, 0.132288)
+transform = Transform3D(0.998953, -1.49012e-08, -0.0457465, 0, 1, 0, 0.0457466, 2.6077e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
+visible = false
 pixel_size = 0.01
 modulate = Color(0.554306, 0.529849, 0, 1)
-text = "Proceed
-"
+text = "Proceed"
+
+[node name="Restart" type="Area3D" parent="Node3D/Main"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0429384, 0.809084, -1.46757)
+script = ExtResource("5_cym11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Main/Restart"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0455958, -0.415846, 0.117398)
+visible = false
+shape = SubResource("BoxShape3D_cqs6p")
+disabled = true
+
+[node name="Label3D" type="Label3D" parent="Node3D/Main/Restart"]
+transform = Transform3D(0.998953, -1.49012e-08, -0.0457465, 0, 1, 0, 0.0457466, 2.6077e-08, 0.998953, 0.0683686, -0.318864, 0.715017)
+visible = false
+pixel_size = 0.01
+modulate = Color(0.554306, 0.529849, 0, 1)
+text = "Restart"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Main/Restart"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0.0314287, -0.351914, 0.653867)
+visible = false
+mesh = SubResource("PlaneMesh_wvgr3")
+skeleton = NodePath("../CollisionShape3D")
 
 [node name="Walls" type="StaticBody3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0372841, 2.26742, 4.99535)
@@ -101,24 +147,28 @@ transform = Transform3D(1, 0, 0, 0, -0.25, 5.46392e-09, 0, -2.18557e-08, -0.0625
 layers = 7
 mesh = SubResource("QuadMesh_h2yge")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
 
 [node name="Wall-2" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.0625, 0.00834813, -0.102316, -0.990817)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
 
 [node name="Wall-3" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.37114e-08, 0, -0.0625, 0, 0.25, 0, 1, 0, -2.73196e-09, 0.484384, -0.103286, -0.50712)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
 
 [node name="Wall-4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.37114e-08, 0, 0.0625, 0, 0.25, 0, -1, 0, -2.73196e-09, -0.492173, -0.103649, -0.503689)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
 
 [node name="Wall-5" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(0.7, 0, 0, 0, 0.175, 0, 0, 0, 0.044, 0.0399737, -0.114894, -0.982482)
@@ -148,8 +198,9 @@ collision_layer = 7
 collision_mask = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3365e-05, 0.00571477, -1.16994)
 mesh = SubResource("BoxMesh_272bh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cqs6p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
@@ -354,6 +405,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
 shape = SubResource("ConvexPolygonShape3D_5vw27")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Welcome_Message" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cym11")
 autoplay = true
+
+[node name="Teacher" parent="." instance=ExtResource("8_jw8fm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.3625, 0.395541, -4.30896)
