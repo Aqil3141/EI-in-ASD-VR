@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=3 uid="uid://cydyd48m1485l"]
+
+[ext_resource type="Texture2D" uid="uid://b2erhed18gbjl" path="res://images/fear/fear_0.jpg" id="1_b6tgm"]
+[ext_resource type="Texture2D" uid="uid://bgrs2wt57m5ie" path="res://images/fear/fear_1.jpg" id="2_2itb8"]
+[ext_resource type="Texture2D" uid="uid://doexcsj0v0i60" path="res://images/fear/fear_2.jpg" id="3_445i4"]
+[ext_resource type="Texture2D" uid="uid://d06n4s1qbphhg" path="res://images/fear/fear_3.jpg" id="4_j15gj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vpcas"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ru80"]
+albedo_texture = ExtResource("1_b6tgm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8v1ph"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_goir4"]
+albedo_texture = ExtResource("2_2itb8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_viq0y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fnr1"]
+albedo_texture = ExtResource("3_445i4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em1dp"]
+albedo_texture = ExtResource("4_j15gj")
+
+[node name="EmotionTutorialDisplay" type="Node3D"]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0127523, 3.97331, 1.2297)
+text = "This emotion is \"Fear\""
+
+[node name="ImageCard_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -0.654112, 3.04851, 1.26772)
+rotation_order = 0
+mesh = SubResource("PlaneMesh_vpcas")
+surface_material_override/0 = SubResource("StandardMaterial3D_2ru80")
+
+[node name="ImageCard_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0.705495, 3.049, 1.268)
+mesh = SubResource("PlaneMesh_8v1ph")
+surface_material_override/0 = SubResource("StandardMaterial3D_goir4")
+
+[node name="Image_Card_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -0.655934, 1.80382, 1.26579)
+mesh = SubResource("PlaneMesh_viq0y")
+surface_material_override/0 = SubResource("StandardMaterial3D_6fnr1")
+
+[node name="Image_Card_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0.738048, 1.80846, 1.26509)
+mesh = SubResource("PlaneMesh_viq0y")
+surface_material_override/0 = SubResource("StandardMaterial3D_em1dp")
