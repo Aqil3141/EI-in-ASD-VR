@@ -27,10 +27,7 @@ func set_label_node(label: Label3D):
 func next_question():
 	#var options = get_node("/root/Main/Options")
 	var options;
-	if is_instance_valid(get_node("/root/Main/Main/Options")):
-		options = get_node("/root/Main/Main/Options")
-	else:
-		options = get_node("/root/Main/Node3D/Main/Options") #hard coded path
+	options = get_parent().get_parent().get_node("Options") #IMPORTANT: Since XROrigin3D is supposed to be a child of selction.tscn this works
 	options.generate_new_question()
 	options.display_pictures()
 	current_question = Globals.current_question
@@ -85,4 +82,5 @@ func btnPressedLeft(name_action:String) -> void:
 			var selected_emotion = targetObject.get_meta("emotion")
 			if check_answer(selected_emotion):
 				next_question()
-			
+		if targetObject is StaticBody3D and targetObject.name == "Proceed":
+			print("StaticBody3D hit: ", targetObject.name)
