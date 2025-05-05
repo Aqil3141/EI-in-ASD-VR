@@ -1,0 +1,10 @@
+.collapsible_row {
+    border: 1px solid #000000;
+    margin: 10px 0;
+}
+
+.header {
+    padding: 10px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
