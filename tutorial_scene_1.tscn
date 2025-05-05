@@ -48,12 +48,12 @@ emission_energy_multiplier = 8.19
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.725693, 0.668073, 0.164463, 0.329617, 0.127766, 0.93543, 0.603922, 0.733045, -0.312927, 0, 7.2277, -1.60259)
+transform = Transform3D(-0.735717, 0.664297, -0.132022, -0.264794, -0.102707, 0.95882, 0.623382, 0.740378, 0.251465, 0.00233746, 4.83432, 0.352554)
 light_energy = 0.5
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.745848, 0.664032, -0.0526533, -0.220428, -0.171448, 0.960217, 0.628588, 0.727782, 0.274245, 0, 6.67883, -2.90692)
+transform = Transform3D(-0.752087, 0.658945, -0.0125321, -0.0522957, -0.0407111, 0.997801, 0.656986, 0.751089, 0.0650782, 0, 4.32978, -2.90692)
 light_energy = 0.5
 shadow_enabled = true
 
@@ -335,4 +335,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
 shape = SubResource("ConvexPolygonShape3D_5vw27")
 
 [node name="Teacher" parent="." instance=ExtResource("4_gfnts")]
-transform = Transform3D(0.323395, 0, -0.381334, 0, 0.5, 0, 0.381334, 0, 0.323395, 3.09094, 0.443109, -3.93476)
+transform = Transform3D(0.323395, 0, -0.381334, 0, 0.5, 0, 0.381334, 0, 0.323395, 2.48222, 0.552668, -3.70469)
