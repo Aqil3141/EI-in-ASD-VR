@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="4_avbro"]
 [ext_resource type="Script" uid="uid://ckfg7372pxt7f" path="res://exit.gd" id="5_cym11"]
 [ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://audio/Welcome.mp3" id="7_cym11"]
-[ext_resource type="PackedScene" uid="uid://c54otj1c5cn4j" path="res://teacher.tscn" id="8_jw8fm"]
+[ext_resource type="PackedScene" uid="uid://bc1kex5nc6okl" path="res://teach.tscn" id="9_wvgr3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
 albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
@@ -405,9 +405,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
 shape = SubResource("ConvexPolygonShape3D_5vw27")
 
-[node name="Welcome_Message" type="AudioStreamPlayer" parent="."]
+[node name="teacher" parent="." instance=ExtResource("9_wvgr3")]
+transform = Transform3D(0.249687, 0, 0.968327, 0, 1, 0, -0.968327, 0, 0.249687, -1.95812, 0, -4.06754)
+
+[node name="Welcome_Message" type="AudioStreamPlayer" parent="teacher"]
 stream = ExtResource("7_cym11")
 autoplay = true
-
-[node name="Teacher" parent="." instance=ExtResource("8_jw8fm")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.3625, 0.395541, -4.30896)

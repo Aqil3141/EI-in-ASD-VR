@@ -20,3 +20,6 @@ func _on_login_button_down() -> void:
 				get_tree().change_scene_to_file("res://main.tscn")
 			else:
 				print("Login Fail")	
+
+func _on_back_button_down() -> void:
+	get_tree().change_scene_to_file("res://menu.tscn")

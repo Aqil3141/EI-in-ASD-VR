@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b2uo4wjjo027p" path="res://player.tscn" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://c54otj1c5cn4j" path="res://teacher.tscn" id="4_gfnts"]
+[ext_resource type="PackedScene" uid="uid://bc1kex5nc6okl" path="res://teach.tscn" id="4_gfnts"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5vw27"]
 points = PackedVector3Array(0.5, 0.5, 0.25, 0.5, 0.5, -0.25, -0.5, 0.5, 0.25, 0.5, -0.5, 0.25, 0.5, -0.5, -0.25, -0.5, 0.5, -0.25, -0.5, -0.5, 0.25, -0.5, -0.5, -0.25)
@@ -334,5 +334,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
 shape = SubResource("ConvexPolygonShape3D_5vw27")
 
-[node name="Teacher" parent="." instance=ExtResource("4_gfnts")]
-transform = Transform3D(0.323395, 0, -0.381334, 0, 0.5, 0, 0.381334, 0, 0.323395, 2.48222, 0.552668, -3.70469)
+[node name="teacher" parent="." instance=ExtResource("4_gfnts")]
+transform = Transform3D(0.726802, 0, -0.686847, 0, 1, 0, 0.686847, 0, 0.726802, 2.64905, 0, -3.6285)

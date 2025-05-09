@@ -5,3 +5,4 @@ func make_visible():
 	$CollisionShape3D.disabled = false
 	$CollisionShape3D.visible = true
 	$Label3D.visible = true
+	get_parent().get_node("Options").visible = false
