@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dot3f8f8ehy4w"]
+[gd_scene load_steps=6 format=3 uid="uid://dot3f8f8ehy4w"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://cb0l07asatdyh" path="res://right_hand_controller.gd" id="3_hqtel"]
+
+[sub_resource type="AudioStream" id="AudioStream_5480x"]
 
 [node name="XROrigin3D" type="XROrigin3D"]
 
@@ -23,6 +25,10 @@ script = ExtResource("3_hqtel")
 [node name="RayCast3D" type="RayCast3D" parent="RightHandController"]
 target_position = Vector3(0, 0, -5)
 collide_with_areas = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="RightHandController"]
+stream = SubResource("AudioStream_5480x")
+volume_db = -20.0
 
 [node name="RightHand" parent="RightHandController" instance=ExtResource("2_i3pqv")]
 

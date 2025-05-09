@@ -9,8 +9,14 @@ func _on_login_page_button_down() -> void:
 func _on_options_page_button_down() -> void:
 	get_tree().change_scene_to_file("res://options.tscn")
 
+func _on_play_button_down() -> void:
+	get_tree().change_scene_to_file("res://Play.tscn")
+
 func _on_tutorial_1_button_down() -> void:
 	get_tree().change_scene_to_file("res://tutorial_scene_1.tscn")
 
 func _on_tutorial_2_button_down() -> void:
 	get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
+
+func _on_back_button_down() -> void:
+	get_tree().change_scene_to_file("res://menu.tscn")

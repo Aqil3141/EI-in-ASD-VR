@@ -16,7 +16,6 @@ func generate_new_question():
 	current_question = Globals.generate_question()
 	count += 1
 	get_parent().send_signal(str(count))
-	$AudioStreamPlayer.play()
 
 func display_pictures():
 	$CurrentQuestion.text = current_question["question"]

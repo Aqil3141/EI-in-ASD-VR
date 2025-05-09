@@ -7,7 +7,7 @@ var current_question: Dictionary
 #of expression images PER FOLDER or this WILL break. - danb
 #additionally, for now (might change later) ALL IMAGES ****MUST**** BE IN .JPG FORMAT.
 #NOT JPEG, NOT PNG, NOT BMP, IT MUST BE IN .JPG!!!! -danb
-const NUM_IMAGES_PER_SUBFOLDER = 4
+const NUM_IMAGES_PER_SUBFOLDER = 6
 
 func _ready():
 	#seed RNG based on system time
@@ -15,7 +15,7 @@ func _ready():
 
 func generate_question():
 	var prompt_emotion = EMOTIONS[randi() % EMOTIONS.size()]
-	print(prompt_emotion)
+	#print(prompt_emotion)
 	var options = []
 	
 	for emotion in EMOTIONS:

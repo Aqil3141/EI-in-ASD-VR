@@ -11,7 +11,9 @@ func _on_result_checked(count: String):
 		self.font_size = 16
 		self.text = "Wonderful! You have finished the tutorial"
 		self.text += "\nClick on the 'Proceed' button to move to the next stage"
-		play_model_animation("Armature_003|mixamo_com|Layer0_002")
+		play_model_animation("Armature_003|mixamo_com|Layer0_002") #Have the NPC teacher move
+		$AudioStreamPlayer.play() #Play the audio cue
+		#Make buttons appear in front of player
 		get_parent().get_node("Proceed").make_visible()
 		get_parent().get_node("Restart").make_visible()
 

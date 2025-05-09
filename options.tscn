@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://7ld8yieq4ynd"]
+[gd_scene load_steps=4 format=3 uid="uid://7ld8yieq4ynd"]
 
 [ext_resource type="Script" uid="uid://cw55elbysvt8e" path="res://options.gd" id="1_5v8ap"]
+[ext_resource type="FontFile" uid="uid://bt8jhojm0i02a" path="res://comicz.ttf" id="2_se8ut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ao2gm"]
+bg_color = Color(0, 0.462745, 0.411765, 1)
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -15,21 +19,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5v8ap")
 
-[node name="Language" type="Button" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -321.0
+offset_right = 613.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00203563
+theme_override_styles/panel = SubResource("StyleBoxFlat_ao2gm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 412.0
 offset_top = 162.0
-offset_right = 742.0
-offset_bottom = 253.0
+offset_right = 762.0
+offset_bottom = 512.0
+theme_override_constants/separation = 80
+
+[node name="Language" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_se8ut")
+theme_override_font_sizes/font_size = 35
 text = "Language"
 
-[node name="Back To Menu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 412.0
-offset_top = 286.0
-offset_right = 742.0
-offset_bottom = 387.0
+[node name="Back To Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_se8ut")
+theme_override_font_sizes/font_size = 35
 text = "Back to Menu"
 
-[connection signal="button_down" from="Language" to="." method="_on_language_button_down"]
-[connection signal="button_down" from="Back To Menu" to="." method="_on_back_to_menu_button_down"]
+[connection signal="button_down" from="VBoxContainer/Language" to="." method="_on_language_button_down"]
+[connection signal="button_down" from="VBoxContainer/Back To Menu" to="." method="_on_back_to_menu_button_down"]

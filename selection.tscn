@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmdm1ejh7a8k4"]
+[gd_scene load_steps=6 format=3 uid="uid://cmdm1ejh7a8k4"]
 
 [ext_resource type="Script" uid="uid://bh0lbehyxvgu4" path="res://selection.gd" id="1_7b2rf"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_y36no"]
-[ext_resource type="AudioStream" uid="uid://bbq8wnrsh7l1" path="res://audio/correct.mp3" id="4_umr4q"]
 [ext_resource type="Script" path="res://Button_Options.gd" id="5_noibv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_h2yge"]
@@ -26,10 +25,6 @@ script = ExtResource("5_noibv")
 
 [node name="CurrentQuestion" type="Label3D" parent="Options"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.602493, 1.73753, 0)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Options"]
-stream = ExtResource("4_umr4q")
-volume_db = -40.0
 
 [node name="Option_0" type="StaticBody3D" parent="Options"]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.0860622, 0.822095, -0.174061)

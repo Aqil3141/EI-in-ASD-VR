@@ -37,12 +37,16 @@ func next_question():
 
 func check_answer(selected: String):
 	var correct = current_question["answer"]
-	print("The answer is:" + correct)
+	#print("The answer is:" + correct)
 	#var main = get_parent()
 	#var label = main.get_node("")
 	if selected == correct:
+		$AudioStreamPlayer.stream = preload("res://audio/correct.mp3")
+		$AudioStreamPlayer.play()
 		return 1 #correct
 	else:
+		$AudioStreamPlayer.stream = preload("res://audio/Wrong.mp3")
+		$AudioStreamPlayer.play()
 		return 0 #incorrect
 	
 
