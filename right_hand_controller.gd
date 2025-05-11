@@ -93,6 +93,5 @@ func btnPressedLeft(name_action:String) -> void:
 		if targetObject and targetObject.name == "Restart":
 			get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Next":
-			print("sent")
 			select_next.next();
 		

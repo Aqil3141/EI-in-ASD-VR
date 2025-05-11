@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bdetn2rorhdso"]
+[gd_scene load_steps=28 format=3 uid="uid://bdetn2rorhdso"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="2_66s0u"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cydyd48m1485l" path="res://Tut1_EMTN_Fear.tscn" id="4_shk2l"]
 [ext_resource type="PackedScene" uid="uid://bggg3fugjw6p2" path="res://Tut1_EMTN_Happy.tscn" id="5_66s0u"]
 [ext_resource type="PackedScene" uid="uid://b21gddhjacv8c" path="res://Tut1_EMTN_Sad.tscn" id="6_r7p5c"]
+[ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://American-Hard-Maple.jpg" id="8_r7p5c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
 albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
@@ -40,6 +41,11 @@ albedo_color = Color(0.340502, 0.315433, 0.312128, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_7mycd"]
 material = SubResource("StandardMaterial3D_lquwl")
 size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vdwyy"]
+shading_mode = 0
+albedo_texture = ExtResource("8_r7p5c")
+albedo_texture_force_srgb = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
 size = Vector3(1, 0.620239, 1)
@@ -168,6 +174,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, 0)
 layers = 7
 mesh = SubResource("PlaneMesh_7mycd")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vdwyy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(10, 0, 0, 0, 6, 0, 0, 0, 10, 0.063302, -1.82908, -0.0128775)

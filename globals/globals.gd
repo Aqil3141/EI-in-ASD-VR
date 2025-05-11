@@ -1,6 +1,7 @@
 extends Node
 const EMOTIONS = ["angry", "fear", "happy", "sad"]
 const BASE_PATH = "res://images/"
+var username: String = ""
 var current_question: Dictionary
 
 #change depending on how many images per subfolder there are. there MUST be the same amount

@@ -2,7 +2,10 @@ extends Control
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	print(Globals.username)
+	if Globals.username != "":
+		$Label.text = "Welcome " + Globals.username + " to the \nASD VR Assessment";
+		
 func _on_login_page_button_down() -> void:
 	get_tree().change_scene_to_file("res://login.tscn")
 	

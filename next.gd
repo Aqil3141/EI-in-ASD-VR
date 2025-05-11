@@ -4,7 +4,6 @@ var emotions = ["Anger", "Fear", "Happy", "Sad"] #emotion nodes alongside this n
 var emotion;
 
 func next():
-	print("next signal received")
 	make_invisible(emotions[count%4])
 	count = count + 1;
 	make_visible(emotions[count%4])
