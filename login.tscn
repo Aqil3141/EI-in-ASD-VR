@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_cau7c")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = -19.0
 offset_top = -6.0
 offset_right = 1181.0

@@ -73,6 +73,7 @@ text = "Tutorial 2
 "
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = -571.0
 offset_top = 258.0
 offset_right = -483.0

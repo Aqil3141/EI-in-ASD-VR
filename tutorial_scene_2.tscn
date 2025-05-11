@@ -5,16 +5,26 @@
 [ext_resource type="Script" uid="uid://yx2x7dkknq75" path="res://guide_text.gd" id="3_avbro"]
 [ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="3_ljpkq"]
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="4_avbro"]
-[ext_resource type="Script" uid="uid://ckfg7372pxt7f" path="res://exit.gd" id="5_cym11"]
 [ext_resource type="AudioStream" uid="uid://c3qm6rkvyulcc" path="res://audio/Good job.mp3" id="5_wvgr3"]
 [ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://audio/Welcome.mp3" id="7_cym11"]
 [ext_resource type="PackedScene" uid="uid://bc1kex5nc6okl" path="res://teach.tscn" id="9_wvgr3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
+[sub_resource type="GDScript" id="GDScript_jw8fm"]
+script/source = "extends Area3D
+
+func make_visible():
+	$MeshInstance3D.visible = true
+	$CollisionShape3D.disabled = false
+	$CollisionShape3D.visible = true
+	$Label3D.visible = true
+	get_parent().get_node(\"Options\").visible = false
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbl5u"]
 albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wvgr3"]
-material = SubResource("StandardMaterial3D_jw8fm")
+material = SubResource("StandardMaterial3D_cbl5u")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_avbro"]
 
@@ -93,7 +103,7 @@ stream = ExtResource("5_wvgr3")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0153449, 1.4298, -1.46758)
 collision_layer = 5
 collision_mask = 5
-script = ExtResource("5_cym11")
+script = SubResource("GDScript_jw8fm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Main/Proceed"]
 transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0.0850248, -0.11746, 0.640837)
@@ -116,7 +126,7 @@ text = "Proceed"
 
 [node name="Restart" type="Area3D" parent="Node3D/Main"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0429384, 0.809084, -1.46757)
-script = ExtResource("5_cym11")
+script = SubResource("GDScript_jw8fm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Main/Restart"]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0455958, -0.415846, 0.117398)
