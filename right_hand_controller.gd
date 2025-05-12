@@ -35,20 +35,22 @@ func next_question():
 	current_question = Globals.current_question
 	
 	
-
+func play_sound(sound:String):
+	var sound_file = "res://audio/"+sound+".mp3"
+	$AudioStreamPlayer.stream = load(sound_file)
+	$AudioStreamPlayer.play()
 
 func check_answer(selected: String):
 	var correct = current_question["answer"]
+	$AudioStreamPlayer.volume_db = linear_to_db(Globals.sound_volume)
 	#print("The answer is:" + correct)
 	#var main = get_parent()
 	#var label = main.get_node("")
 	if selected == correct:
-		$AudioStreamPlayer.stream = preload("res://audio/correct.mp3")
-		$AudioStreamPlayer.play()
+		play_sound("correct")
 		return 1 #correct
 	else:
-		$AudioStreamPlayer.stream = preload("res://audio/Wrong.mp3")
-		$AudioStreamPlayer.play()
+		play_sound("Wrong")
 		return 0 #incorrect
 	
 
@@ -83,7 +85,7 @@ func _physics_process(_delta: float) -> void:
 
 func btnPressedLeft(name_action:String) -> void:
 	if name_action == "trigger_click":
-		print("hi")
+		
 		if targetObject and targetObject.has_meta("emotion"):
 			var selected_emotion = targetObject.get_meta("emotion")
 			if check_answer(selected_emotion):
@@ -93,5 +95,6 @@ func btnPressedLeft(name_action:String) -> void:
 		if targetObject and targetObject.name == "Restart":
 			get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Next":
+			play_sound("Wrong")
 			select_next.next();
 		

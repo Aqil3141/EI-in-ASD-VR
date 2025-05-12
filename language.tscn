@@ -66,6 +66,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t5yah")
 theme_override_font_sizes/font_size = 45
-text = "Back to Menu"
+text = "Back"
 
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="change_language_to_english"]
+[connection signal="button_down" from="VBoxContainer/Button2" to="." method="change_language_to_arabic"]
 [connection signal="button_down" from="VBoxContainer/Back To Menu" to="." method="_on_back_to_menu_button_down"]

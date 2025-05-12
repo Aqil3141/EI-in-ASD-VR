@@ -2,9 +2,9 @@ extends Control
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	print(Globals.username)
 	if Globals.username != "":
-		$Label.text = "Welcome " + Globals.username + " to the \nASD VR Assessment";
+		if is_instance_valid($Label_Menu):
+			$Label_Menu.text = tr("Welcome ") + Globals.username + "\n" + tr("ASD VR Assessment");
 		
 func _on_login_page_button_down() -> void:
 	get_tree().change_scene_to_file("res://login.tscn")

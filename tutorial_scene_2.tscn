@@ -428,3 +428,5 @@ transform = Transform3D(0.249687, 0, 0.968327, 0, 1, 0, -0.968327, 0, 0.249687, 
 [node name="Welcome_Message" type="AudioStreamPlayer" parent="teacher"]
 stream = ExtResource("7_cym11")
 autoplay = true
+
+[connection signal="ready" from="Node3D/Main/Label3D/AudioStreamPlayer" to="Node3D/Main/Label3D" method="audio_level"]

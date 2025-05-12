@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dobyp1q0dd10x"]
+[gd_scene load_steps=6 format=3 uid="uid://dobyp1q0dd10x"]
 
 [ext_resource type="Script" uid="uid://bq8n7b80fedla" path="res://menu.gd" id="1_lti8b"]
 [ext_resource type="FontFile" uid="uid://bt8jhojm0i02a" path="res://comicz.ttf" id="2_ouk20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
 bg_color = Color(0, 0.462745, 0.411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
+bg_color = Color(0, 0, 0, 0.2)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mae5d"]
+bg_color = Color(0.278431, 0.278431, 0.278431, 0.541176)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -28,18 +42,19 @@ offset_bottom = 644.0
 rotation = 0.00203563
 theme_override_styles/panel = SubResource("StyleBoxFlat_lti8b")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label_Menu" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -260.5
-offset_top = 50.0
-offset_right = 260.5
-offset_bottom = 126.0
+offset_left = -286.0
+offset_top = 55.0
+offset_right = 288.0
+offset_bottom = 131.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_ouk20")
 text = "ASD VR Assessment"
 horizontal_alignment = 1
 
@@ -51,9 +66,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -175.0
-offset_top = -100.0
+offset_top = -35.0
 offset_right = 175.0
-offset_bottom = 162.0
+offset_bottom = 227.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(64, 50)
@@ -64,6 +79,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_mae5d")
 text = "Play"
 
 [node name="LoginPage" type="Button" parent="VBoxContainer"]
@@ -71,6 +87,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_mae5d")
 text = "Login"
 
 [node name="OptionsPage" type="Button" parent="VBoxContainer"]
@@ -78,6 +95,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_mae5d")
 text = "Options"
 
 [connection signal="button_down" from="VBoxContainer/Play" to="." method="_on_play_button_down"]

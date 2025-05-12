@@ -3,6 +3,8 @@ const EMOTIONS = ["angry", "fear", "happy", "sad"]
 const BASE_PATH = "res://images/"
 var username: String = ""
 var current_question: Dictionary
+var music_volume = -60.0;
+var sound_volume = -60.0;
 
 #change depending on how many images per subfolder there are. there MUST be the same amount
 #of expression images PER FOLDER or this WILL break. - danb
