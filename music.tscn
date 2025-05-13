@@ -6,7 +6,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snvyd"]
 bg_color = Color(0, 0.462745, 0.411765, 1)
 
-[node name="Node2D" type="Control"]
+[node name="Music" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_5vxup")

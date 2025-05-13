@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	if(is_instance_valid($Panel/music_slider)): #For music screen
+	if(self.name == "Music"): #For music screen
 		$Panel/music_slider.value = Globals.music_volume
 		$Panel/sound_slider.value = Globals.sound_volume
 	
