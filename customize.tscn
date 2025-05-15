@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://dne1bglxptgox"]
+
+[ext_resource type="Script" uid="uid://csg8y2ylpbiri" path="res://customize.gd" id="1_jngtt"]
+[ext_resource type="FontFile" uid="uid://bt8jhojm0i02a" path="res://comicz.ttf" id="1_vau1m"]
+[ext_resource type="PackedScene" uid="uid://c3di00bq6wejd" path="res://hand_custom.tscn" id="2_col36"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_col36"]
+bg_color = Color(0, 0.462745, 0.411765, 1)
+
+[node name="Customize" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jngtt")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 1195.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00203563
+theme_override_styles/panel = SubResource("StyleBoxFlat_col36")
+
+[node name="Back To Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 520.0
+offset_right = 714.0
+offset_bottom = 606.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_vau1m")
+theme_override_font_sizes/font_size = 35
+text = "Back To Menu"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 370.0
+offset_right = 784.0
+offset_bottom = 503.0
+color = Color(0.909804, 0.623529, 0.388235, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 65.0
+offset_right = 802.0
+offset_bottom = 315.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(375, 250)
+render_target_update_mode = 4
+
+[node name="Hands" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_col36")]
+
+[connection signal="button_down" from="Back To Menu" to="." method="_on_back_to_menu_button_down"]
+[connection signal="color_changed" from="ColorPickerButton" to="." method="_color_pick"]
+[connection signal="popup_closed" from="ColorPickerButton" to="." method="set_color"]

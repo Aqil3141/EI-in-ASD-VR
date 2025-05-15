@@ -131,7 +131,10 @@ func _ready() -> void:
 	_hand_mesh = _find_child(self, "MeshInstance3D")
 	_animation_player = _find_child(self, "AnimationPlayer")
 	_animation_tree = _find_child(self, "AnimationTree")
-
+	
+	update_hand_color()
+	#Globals.connect("hand_color_changed", self.update_hand_color)
+	
 	# Apply all updates
 	_update_hand_blend_tree()
 	_update_hand_material_override()
@@ -475,3 +478,6 @@ static func _find_child(node : Node, type : String) -> Node:
 
 	# No child found matching type
 	return null
+
+func update_hand_color():
+	hand_material_override.albedo_color = Globals.get_hand_color()

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3di00bq6wejd"]
+
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_dbmwk"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_k7awt"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_dbmwk"]
+albedo_color = Color(0.910718, 0.622341, 0.390009, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_k7awt"]
+albedo_color = Color(0.909804, 0.623529, 0.388235, 1)
+
+[node name="Hands" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0486176, -0.00073574, 0.998817, -0.0151315, -0.999886, 0, 0.998703, -0.0151136, -0.0486231, 1.29119, 0.554268, -0.110144)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.688557, 0, 0.725182, 0, 1, 0, -0.725182, 0, -0.688557, 0.320321, -0.0118635, -0.201089)
+keep_aspect = 0
+
+[node name="LeftHand" parent="." instance=ExtResource("1_dbmwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0303084, 0)
+hand_material_override = SubResource("ORMMaterial3D_dbmwk")
+
+[node name="RightHand2" parent="." instance=ExtResource("2_k7awt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0897688, 0, 0)
+hand_material_override = SubResource("ORMMaterial3D_k7awt")
