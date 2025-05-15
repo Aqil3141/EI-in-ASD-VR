@@ -29,6 +29,12 @@ albedo_texture = ExtResource("4_vvqbm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0127523, 3.97331, 1.2297)
 text = "This emotion is \"Anger\""
 
+[node name="Description" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97468, 2.57066, 1.23)
+text = "Tip:
+Look out for
+Eyebrows furrowing"
+
 [node name="ImageCard_0" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -0.654112, 3.04851, 1.26772)
 rotation_order = 0

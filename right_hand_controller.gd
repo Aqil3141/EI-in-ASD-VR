@@ -19,7 +19,7 @@ func _ready() -> void:
 	connect("button_pressed", btnPressedLeft)
 	#re-define current_question in _ready() as otherwise it will initialise before the game has loaded in.
 	current_question = Globals.current_question
-	if is_instance_valid(get_tree().get_current_scene().get_node("Selection/Next")):
+	if get_tree().get_current_scene().name == "Tutorial_1":
 		select_next = get_tree().get_current_scene().get_node("Selection/Next");
 var label_node: Label3D = null
 func set_label_node(label: Label3D):
@@ -91,7 +91,10 @@ func btnPressedLeft(name_action:String) -> void:
 			if check_answer(selected_emotion):
 				next_question()
 		if targetObject and targetObject.name == "Proceed":
-			get_tree().change_scene_to_file("res://menu.tscn")
+			if get_tree().get_current_scene().name != "Tutorial_1":
+				get_tree().change_scene_to_file("res://menu.tscn")
+			else:
+				get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Restart":
 			get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Next":

@@ -6,7 +6,7 @@ var emotion;
 func _ready() -> void:
 	play_model_animation("Armature_004|mixamo_com|Layer0_001")
 	await get_tree().create_timer(1.0).timeout
-	get_node("/root/Main/AudioStreamPlayer").play()
+	get_node("/root/Tutorial_1/AudioStreamPlayer").play()
 	await get_tree().create_timer(2.0).timeout
 	self.visible = true
 	
@@ -27,7 +27,7 @@ func make_invisible(current_emotion):
 	emotion.visible = false
 
 func play_model_animation(animation):
-	var model = get_node("/root/Main/teacher")  # Adjust path as needed
+	var model = get_node("/root/Tutorial_1/teacher")  # Adjust path as needed
 	var anim_player = model.get_node("AnimationPlayer")  # Or path to AnimationTree
 	#print(anim_player.get_animation_list()) #Check for all animation names
 	model.play_and_pose(animation)

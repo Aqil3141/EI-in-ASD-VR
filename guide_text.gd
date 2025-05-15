@@ -5,6 +5,7 @@ func _ready():
 	play_model_animation("Armature|mixamo_com|Layer0")
 
 func _on_result_checked(count: String):
+	
 	if int(count) < 4:
 		self.text = tr("Good job!") + " " + count + "/4"
 	if int(count) >= 4:

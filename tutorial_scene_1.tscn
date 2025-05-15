@@ -113,12 +113,12 @@ albedo_color = Color(0.640651, 0.312368, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvjdq"]
 albedo_color = Color(1, 1, 0.0352941, 1)
 
-[node name="Main" type="Node3D"]
+[node name="Tutorial_1" type="Node3D"]
 
 [node name="StartXR" parent="." instance=ExtResource("1_ig7tw")]
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_66s0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280382, 1.01395, -1.4069)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280382, 0.669442, -1.4069)
 
 [node name="Window" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, -4.89731, 1.099, 1.31489)
