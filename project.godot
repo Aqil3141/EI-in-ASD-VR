@@ -21,6 +21,7 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 XrSimulator="*res://addons/xr-simulator/XRSimulator.tscn"
 Globals="*res://globals/globals.gd"
+BgMusic="*res://bg_music.gd"
 
 [editor]
 
@@ -61,7 +62,7 @@ jump={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://languages.ar.translation", "res://languages.en.translation")
+locale/translations=PackedStringArray("res://languages.en.translation", "res://languages.ar.translation")
 
 [rendering]
 

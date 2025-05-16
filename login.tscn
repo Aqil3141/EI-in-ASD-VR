@@ -56,7 +56,7 @@ grow_vertical = 2
 [node name="Username" type="TextEdit" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-placeholder_text = "Enter a username..."
+placeholder_text = "Enter a username"
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -85,8 +85,7 @@ text = "Save Anonymously"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_3n56f")
-text = "Back
-"
+text = "Back"
 
 [connection signal="button_down" from="VBoxContainer2/SaveName" to="." method="_on_save_name_button_down"]
 [connection signal="button_down" from="VBoxContainer2/SaveAnon" to="." method="_on_save_anon_button_down"]

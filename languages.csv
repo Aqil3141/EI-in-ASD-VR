@@ -32,10 +32,10 @@ Proceed,Proceed,تغيير المستوى
 "Welcome to 
 tutorial stage 2","Welcome to 
 tutorial stage 2",مرحباً بكم في المرحلة التعليمية الثانية
-Select the image that represents 'happy',Select the image that represents 'happy',"اختر الصورة التي تمثل ""السعادة"""
-Select the image that represents 'fear',Select the image that represents 'fear',"حدد الصورة التي تمثل ""الخوف"""
-Select the image that represents 'sad',Select the image that represents 'sad',"حدد الصورة التي تمثل ""الحزن"""
-Select the image that represents 'angry',Select the image that represents 'angry',"حدد الصورة التي تمثل ""الغضب"""
+Select the image that represents 'happy' 😃,Select the image that represents 'happy' 😃,"اختر الصورة التي تمثل ""السعادة""😃"
+Select the image that represents 'fear' 😱,Select the image that represents 'fear'😱,"حدد الصورة التي تمثل ""الخوف""😱"
+Select the image that represents 'sad' 😞,Select the image that represents 'sad'😞,"حدد الصورة التي تمثل ""الحزن""😞"
+Select the image that represents 'angry' 😠,Select the image that represents 'angry'😠,"حدد الصورة التي تمثل ""الغضب""😠"
 Good job!,Good job!,أحسنت!
 Restart,Restart,إعادة تشغيل
 Wonderful,Wonderful,رائع
@@ -61,3 +61,6 @@ Look out for
 Mouth corners pulled downward","Tip:
 Look out for
 Mouth corners pulled downward",نصيحة: انتبه لزوايا الفم المسحوبة للأسفل
+Back To Menu,Back To Menu,العودة إلى القائمة
+Customization,Customization,التخصيص
+Enter a username…,Enter a username...,أدخل اسم المستخدم…

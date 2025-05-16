@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cibl7jrnas8wr"]
+
+[ext_resource type="PackedScene" uid="uid://yd2ghbamxgyi" path="res://music.tscn" id="1_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="3_ykrsh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6uqi0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ppyta"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykrsh"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ppyta")
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="StartXR" parent="." instance=ExtResource("3_6uqi0")]
+
+[node name="Music" parent="." instance=ExtResource("1_8uh7m")]
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+use_xr = true
+size = Vector2i(0, 0)
+
+[node name="Music2" parent="SubViewport2" instance=ExtResource("1_8uh7m")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.888454, -0.458928, 0.00589396, 0.458501, 0.886901, -0.0564253, 0.0206678, 0.0528337, 0.998389, 0, 0, 4.32508)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.851892, -0.523718, 0, 0.523718, 0.851892, 0, 1.25808, -0.312019)
+text = "HELLO THERE"
+
+[node name="XROrigin3D" parent="." instance=ExtResource("3_ykrsh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.91671)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0341146, -0.999418, 0, 0.999418, 0.0341146, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6uqi0")
+surface_material_override/0 = SubResource("StandardMaterial3D_ykrsh")

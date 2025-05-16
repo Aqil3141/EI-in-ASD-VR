@@ -55,6 +55,7 @@ func check_answer(selected: String):
 	
 
 func _physics_process(_delta: float) -> void:
+	
 	if $RayCast3D.is_colliding():
 		var c = $RayCast3D.get_collider()
 		targetObject = c
@@ -64,6 +65,16 @@ func _physics_process(_delta: float) -> void:
 			pass
 	else:
 		targetObject = null
+	
+#var rotation_speed = 2.0  # radians per second
+
+#func _process(delta):
+#	var input_dir = 0.0
+#	if Input.is_action_pressed("ui_left"):
+#		input_dir -= 1
+#	if Input.is_action_pressed("ui_right"):
+#		input_dir += 1
+#	rotation.y += input_dir * rotation_speed * delta
 	
 	#
 	#if $RayCast3D.is_colliding() && Input.is_action_just_pressed("trigger_click"):
@@ -84,7 +95,8 @@ func _physics_process(_delta: float) -> void:
 		
 
 func btnPressedLeft(name_action:String) -> void:
-	if name_action == "trigger_click":
+	
+	if name_action == "trigger_click" or name_action == "select_button":
 		
 		if targetObject and targetObject.has_meta("emotion"):
 			var selected_emotion = targetObject.get_meta("emotion")

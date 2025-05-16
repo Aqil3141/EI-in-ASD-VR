@@ -100,16 +100,6 @@ albedo_color = Color(1, 0.890798, 0.797172, 1)
 
 [node name="Main" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.725693, 0.668073, 0.164463, 0.329617, 0.127766, 0.93543, 0.603922, 0.733045, -0.312927, 0, 7.2277, -1.63316)
-light_energy = 0.5
-shadow_enabled = true
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.745848, 0.664032, -0.0526533, -0.220428, -0.171448, 0.960217, 0.628588, 0.727782, 0.274245, 0, 6.67883, -2.90692)
-light_energy = 0.5
-shadow_enabled = true
-
 [node name="StartXR" parent="." instance=ExtResource("1_w5e7v")]
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -119,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974716, 0, -2.98587)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574014, 0, 0.189098)
 
 [node name="XROrigin3D" parent="Node3D/Main" instance=ExtResource("4_avbro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0151701, 1.0312, 0.414435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0151701, 0.642426, 0.808997)
 
 [node name="Label3D" type="Label3D" parent="Node3D/Main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86765, 1.25569, -1.96822)
@@ -456,6 +446,7 @@ transform = Transform3D(0.249687, 0, 0.968327, 0, 1, 0, -0.968327, 0, 0.249687, 
 
 [node name="Welcome_Message" type="AudioStreamPlayer" parent="teacher"]
 stream = ExtResource("7_cym11")
+volume_db = -20.0
 autoplay = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -488,5 +479,14 @@ transform = Transform3D(5, 0, 0, 0, -4.99529, -0.216877, 0, 0.216877, -4.99529, 
 mesh = SubResource("PlaneMesh_ujacl")
 skeleton = NodePath("../Floor")
 surface_material_override/0 = SubResource("StandardMaterial3D_gjhq3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.651782, -0.467986, -0.596799, 0.287851, -0.88068, 0.376224, -0.701657, 0.0734272, 0.708722, -3.09942, 1.66401, 0.352554)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67013, 0.567832, 1.28313)
+light_energy = 0.1
 
 [connection signal="ready" from="Node3D/Main/Label3D/AudioStreamPlayer" to="Node3D/Main/Label3D" method="audio_level"]

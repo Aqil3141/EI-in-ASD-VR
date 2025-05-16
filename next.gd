@@ -14,6 +14,7 @@ func next():
 	make_invisible(emotions[count%4])
 	count = count + 1;
 	make_visible(emotions[count%4])
+	play_sound()
 	if count >= 4:
 		get_parent().get_node("Proceed").make_visible()
 	
@@ -31,3 +32,16 @@ func play_model_animation(animation):
 	var anim_player = model.get_node("AnimationPlayer")  # Or path to AnimationTree
 	#print(anim_player.get_animation_list()) #Check for all animation names
 	model.play_and_pose(animation)
+
+var emotion_sounds = [
+	preload("res://audio/anger.mp3"),
+	preload("res://audio/fear.mp3"),
+	preload("res://audio/happiness.mp3"),
+	preload("res://audio/sad.mp3")
+]
+
+func play_sound():
+	var player = get_parent().get_node("Emotion")
+	player.volume_db = Globals.sound_volume
+	player.stream = emotion_sounds[count % 4]
+	player.play()

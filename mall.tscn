@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccjrwb84ticvg"]
+
+[ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="1_cxcin"]
+[ext_resource type="AudioStream" uid="uid://bbggnents4wve" path="res://audio/Welcome_Oman.mp3" id="2_8w8cr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_floor"]
+material = SubResource("StandardMaterial3D_floor")
+size = Vector2(40, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(40, 0.1, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
+albedo_color = Color(0.6, 0.6, 0.7, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wall"]
+material = SubResource("StandardMaterial3D_wall")
+size = Vector2(40, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
+albedo_color = Color(0.9, 0.9, 0.9, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ceiling"]
+material = SubResource("StandardMaterial3D_ceiling")
+size = Vector2(40, 40)
+
+[node name="MallEnvironment" type="Node3D"]
+
+[node name="XROrigin3D" parent="." instance=ExtResource("1_cxcin")]
+transform = Transform3D(-0.0232108, 0, -0.999731, 0, 1, 0, 0.999731, 0, -0.0232108, -2.28902, 0.847029, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_floor")
+
+[node name="FloorCollision" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Floor/FloorCollision"]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="WallFront" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4, -20)
+mesh = SubResource("PlaneMesh_wall")
+
+[node name="WallBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 20)
+mesh = SubResource("PlaneMesh_wall")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 8, 0)
+mesh = SubResource("PlaneMesh_ceiling")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0784656, 0.766684, -0.637212, -0.0937008, 0.642025, 0.760936, 0.992504, 7.39473e-09, 0.122216, 0, 4.48147, 0)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.97179, 0.117058, -0.204749, -0.114461, 0.524966, 0.843391, 0.206212, 0.843035, -0.496758, 0, 4.48147, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8w8cr")

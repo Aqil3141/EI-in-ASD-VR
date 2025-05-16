@@ -17,13 +17,13 @@ albedo_color = Color(0.909804, 0.623529, 0.388235, 1)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21629, 0)
-keep_aspect = 0
 
 [node name="LeftHandController" type="XRController3D" parent="."]
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHandController" instance=ExtResource("1_onrkg")]
 hand_material_override = SubResource("ORMMaterial3D_5480x")
+trigger_action = "trigger"
 
 [node name="FunctionPickup" parent="LeftHandController/LeftHand" instance=ExtResource("2_hqtel")]
 
@@ -41,5 +41,6 @@ volume_db = -20.0
 
 [node name="RightHand" parent="RightHandController" instance=ExtResource("2_i3pqv")]
 hand_material_override = SubResource("ORMMaterial3D_wjgvn")
+trigger_action = "trigger"
 
 [node name="FunctionPickup" parent="RightHandController/RightHand" instance=ExtResource("2_hqtel")]

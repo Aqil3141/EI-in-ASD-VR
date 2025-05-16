@@ -132,8 +132,7 @@ func _ready() -> void:
 	_animation_player = _find_child(self, "AnimationPlayer")
 	_animation_tree = _find_child(self, "AnimationTree")
 	
-	update_hand_color()
-	#Globals.connect("hand_color_changed", self.update_hand_color)
+	call_deferred("update_hand_color")
 	
 	# Apply all updates
 	_update_hand_blend_tree()

@@ -197,6 +197,8 @@ visible = false
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.08214, -0.794193)
 visible = false
 
+[node name="Emotion" type="AudioStreamPlayer" parent="Selection"]
+
 [node name="Walls" type="StaticBody3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0372841, 2.26742, 4.99535)
 collision_layer = 8

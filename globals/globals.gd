@@ -1,20 +1,17 @@
 extends Node
 const EMOTIONS = ["angry", "fear", "happy", "sad"]
+const avatar = {"angry":"😠", "fear":"😱", "happy":"😃", "sad":"😞"}
 const BASE_PATH = "res://images/"
 var username: String = ""
 var current_question: Dictionary
 #music and sound settings
-var music_volume = 0.1;
-var sound_volume = 0.1;
+var music_volume = 0.01;
+var sound_volume = 0.01;
 
 #hand color settings
 var hand_color = Color("#E89F63") 
 
-func set_hand_color(value):
-	hand_color = value
 
-func get_hand_color():
-	return hand_color
 
 
 #change depending on how many images per subfolder there are. there MUST be the same amount
@@ -26,10 +23,12 @@ const NUM_IMAGES_PER_SUBFOLDER = 6
 func _ready():
 	#seed RNG based on system time
 	randomize()
-
+	
 func generate_question():
 	var prompt_emotion = EMOTIONS[randi() % EMOTIONS.size()]
-	#print(prompt_emotion)
+	while current_question and prompt_emotion == current_question["answer"]:
+		prompt_emotion = EMOTIONS[randi() % EMOTIONS.size()]
+	
 	var options = []
 	
 	for emotion in EMOTIONS:
@@ -48,7 +47,7 @@ func generate_question():
 	options.shuffle()
 
 	current_question = {
-		"question": "Select the image that represents '%s'" % prompt_emotion,
+		"question": "Select the image that represents '%s' %s" % [prompt_emotion, avatar[prompt_emotion]],
 		"answer": prompt_emotion,
 		"options": options
 	}
@@ -67,3 +66,9 @@ func generate_question():
 		#{"emotion": "anger", "image": "res://images/anger.png"}
 	#]
 #}
+
+func set_hand_color(value):
+	hand_color = value
+
+func get_hand_color():
+	return hand_color

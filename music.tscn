@@ -53,10 +53,9 @@ offset_left = 412.0
 offset_top = 162.0
 offset_right = 762.0
 offset_bottom = 194.0
-min_value = 0.01
-max_value = 0.5
+max_value = 2.0
 step = 0.01
-value = 0.1
+value = 0.01
 
 [node name="sound" type="Label" parent="Panel"]
 layout_mode = 0
@@ -73,10 +72,9 @@ offset_left = 412.216
 offset_top = 268.0
 offset_right = 762.216
 offset_bottom = 300.0
-min_value = 0.01
 max_value = 0.5
 step = 0.01
-value = 0.1
+value = 0.01
 
 [connection signal="button_down" from="Panel/Back To Menu" to="." method="_on_back_to_menu_button_down"]
 [connection signal="value_changed" from="Panel/music_slider" to="." method="music_volume_change"]

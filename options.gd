@@ -20,6 +20,7 @@ func _on_back_to_customize_button_down() -> void:
 	
 func music_volume_change(music: float) -> void:
 	Globals.music_volume = music;
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(Globals.music_volume))
 	
 func sound_volume_change(sound: float) -> void:
 	Globals.sound_volume = sound;
