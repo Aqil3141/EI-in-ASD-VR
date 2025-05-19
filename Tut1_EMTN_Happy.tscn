@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://bggg3fugjw6p2"]
 
-[ext_resource type="Texture2D" uid="uid://5yuqvv4e7kqy" path="res://images/happy/happy_0.jpg" id="1_vykst"]
-[ext_resource type="Texture2D" uid="uid://blu3rgak4qwd7" path="res://images/happy/happy_1.jpg" id="2_wt6ma"]
-[ext_resource type="Texture2D" uid="uid://be8mxm11dyuwy" path="res://images/happy/happy_2.jpg" id="3_nhdyy"]
-[ext_resource type="Texture2D" uid="uid://cqne0q8k6iob1" path="res://images/happy/happy_3.jpg" id="4_u4lh3"]
+[ext_resource type="Texture2D" uid="uid://5yuqvv4e7kqy" path="res://assets/images/happy/happy_0.jpg" id="1_vykst"]
+[ext_resource type="Texture2D" uid="uid://blu3rgak4qwd7" path="res://assets/images/happy/happy_1.jpg" id="2_wt6ma"]
+[ext_resource type="Texture2D" uid="uid://be8mxm11dyuwy" path="res://assets/images/happy/happy_2.jpg" id="3_nhdyy"]
+[ext_resource type="Texture2D" uid="uid://cqne0q8k6iob1" path="res://assets/images/happy/happy_3.jpg" id="4_u4lh3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vpcas"]
 

@@ -34,10 +34,10 @@ func play_model_animation(animation):
 	model.play_and_pose(animation)
 
 var emotion_sounds = [
-	preload("res://audio/anger.mp3"),
-	preload("res://audio/fear.mp3"),
-	preload("res://audio/happiness.mp3"),
-	preload("res://audio/sad.mp3")
+	preload("res://assets/audio/anger.mp3"),
+	preload("res://assets/audio/fear.mp3"),
+	preload("res://assets/audio/happiness.mp3"),
+	preload("res://assets/audio/sad.mp3")
 ]
 
 func play_sound():

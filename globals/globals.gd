@@ -1,7 +1,7 @@
 extends Node
 const EMOTIONS = ["angry", "fear", "happy", "sad"]
 const avatar = {"angry":"😠", "fear":"😱", "happy":"😃", "sad":"😞"}
-const BASE_PATH = "res://images/"
+const BASE_PATH = "res://assets/images/"
 var username: String = ""
 var current_question: Dictionary
 #music and sound settings
@@ -25,6 +25,10 @@ func _ready():
 	randomize()
 	
 func generate_question():
+	var scene = false
+	if get_tree().get_current_scene().has_node("Tutorial_1_2") or get_tree().get_current_scene().has_node("Tutorial_1_1"):
+		scene = true
+	
 	var prompt_emotion = EMOTIONS[randi() % EMOTIONS.size()]
 	while current_question and prompt_emotion == current_question["answer"]:
 		prompt_emotion = EMOTIONS[randi() % EMOTIONS.size()]
@@ -32,12 +36,12 @@ func generate_question():
 	var options = []
 	
 	for emotion in EMOTIONS:
-		var index = randi() % NUM_IMAGES_PER_SUBFOLDER
+		var index = randi() % (NUM_IMAGES_PER_SUBFOLDER if !scene else 4)
 		
 		
 		#the reason why all images must be in .jpg
 		#vvvvvv
-		var image_path = "%s%s/%s_%d.jpg" % [BASE_PATH, emotion, emotion, index]
+		var image_path = "%s%s/%s_%d.jpg" % [BASE_PATH, emotion, (emotion if !scene else "basic"), index]
 		options.append({
 			"emotion": emotion,
 			"image": image_path

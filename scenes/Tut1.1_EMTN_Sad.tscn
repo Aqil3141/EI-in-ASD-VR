@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://uewvqhqm7a0g"]
+
+[ext_resource type="Texture2D" uid="uid://dmxa2chx3l1uj" path="res://assets/images/sad/basic_1.jpg" id="1_ga8qx"]
+[ext_resource type="Texture2D" uid="uid://ch40kl157cxaq" path="res://assets/images/sad/basic_2.jpg" id="2_q3pvn"]
+[ext_resource type="Texture2D" uid="uid://debdlf3joambb" path="res://assets/images/sad/basic_3.jpg" id="5_ji2fd"]
+[ext_resource type="Texture2D" uid="uid://wwyfem4y2cfd" path="res://assets/images/sad/basic_4.jpg" id="7_8qx84"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q8p1"]
+albedo_texture = ExtResource("1_ga8qx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vpcas"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ru80"]
+albedo_texture = ExtResource("1_ga8qx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga8qx"]
+albedo_texture = ExtResource("2_q3pvn")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8v1ph"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji2fd"]
+albedo_texture = ExtResource("5_ji2fd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_viq0y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qx84"]
+albedo_texture = ExtResource("7_8qx84")
+
+[node name="EmotionTutorialDisplay" type="Node3D"]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0127523, 3.97331, 1.2297)
+text = "This emotion is \"Sadness\""
+
+[node name="Description" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97468, 2.57066, 1.23)
+text = "Tip:
+Look out for
+Mouth corners pulled downward"
+
+[node name="ImageCard_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -0.654112, 3.04851, 1.26772)
+rotation_order = 0
+material_override = SubResource("StandardMaterial3D_6q8p1")
+mesh = SubResource("PlaneMesh_vpcas")
+surface_material_override/0 = SubResource("StandardMaterial3D_2ru80")
+
+[node name="ImageCard_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0.705495, 3.049, 1.268)
+material_override = SubResource("StandardMaterial3D_ga8qx")
+mesh = SubResource("PlaneMesh_8v1ph")
+
+[node name="Image_Card_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -0.655934, 1.80382, 1.26579)
+material_override = SubResource("StandardMaterial3D_ji2fd")
+mesh = SubResource("PlaneMesh_viq0y")
+
+[node name="Image_Card_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0.738048, 1.80846, 1.26509)
+material_override = SubResource("StandardMaterial3D_8qx84")
+mesh = SubResource("PlaneMesh_viq0y")

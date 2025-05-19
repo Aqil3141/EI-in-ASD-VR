@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://yx2x7dkknq75" path="res://guide_text.gd" id="3_avbro"]
 [ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="3_ljpkq"]
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="4_avbro"]
-[ext_resource type="AudioStream" uid="uid://c3qm6rkvyulcc" path="res://audio/Good job.mp3" id="5_wvgr3"]
+[ext_resource type="AudioStream" uid="uid://c3qm6rkvyulcc" path="res://assets/audio/Good job.mp3" id="5_cbl5u"]
 [ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://American-Hard-Maple.jpg" id="6_wvgr3"]
-[ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://audio/Welcome.mp3" id="7_cym11"]
+[ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://assets/audio/Welcome.mp3" id="9_cbl5u"]
 [ext_resource type="PackedScene" uid="uid://bc1kex5nc6okl" path="res://teach.tscn" id="9_wvgr3"]
 [ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://window.jpg" id="10_cbl5u"]
 [ext_resource type="Texture2D" uid="uid://eyve01qccsof" path="res://window_2.jpg" id="11_cqwwp"]
@@ -118,7 +118,7 @@ tutorial stage 2"
 script = ExtResource("3_avbro")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node3D/Main/Label3D"]
-stream = ExtResource("5_wvgr3")
+stream = ExtResource("5_cbl5u")
 
 [node name="Proceed" type="Area3D" parent="Node3D/Main"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0122211, 1.4218, -1.46185)
@@ -445,7 +445,7 @@ shape = SubResource("ConvexPolygonShape3D_5vw27")
 transform = Transform3D(0.249687, 0, 0.968327, 0, 1, 0, -0.968327, 0, 0.249687, -1.95812, 0, -4.06754)
 
 [node name="Welcome_Message" type="AudioStreamPlayer" parent="teacher"]
-stream = ExtResource("7_cym11")
+stream = ExtResource("9_cbl5u")
 volume_db = -20.0
 autoplay = true
 

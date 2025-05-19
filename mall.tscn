@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ccjrwb84ticvg"]
 
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="1_cxcin"]
-[ext_resource type="AudioStream" uid="uid://bbggnents4wve" path="res://audio/Welcome_Oman.mp3" id="2_8w8cr"]
+[ext_resource type="AudioStream" path="res://audio/Welcome_Oman.mp3" id="2_8w8cr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
 albedo_color = Color(0.8, 0.8, 0.8, 1)

@@ -36,7 +36,7 @@ func next_question():
 	
 	
 func play_sound(sound:String):
-	var sound_file = "res://audio/"+sound+".mp3"
+	var sound_file = "res://assets/audio/"+sound+".mp3"
 	$AudioStreamPlayer.stream = load(sound_file)
 	$AudioStreamPlayer.play()
 
@@ -106,9 +106,15 @@ func btnPressedLeft(name_action:String) -> void:
 			if get_tree().get_current_scene().name != "Tutorial_1":
 				get_tree().change_scene_to_file("res://menu.tscn")
 			else:
-				get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
+				if get_tree().get_current_scene().has_node("Tutorial_1_1"):
+					get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.2.tscn")
+				else:
+					get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Restart":
-			get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
+			if get_tree().get_current_scene().has_node("Tutorial_1_2"):
+				get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.2.tscn")
+			else:
+				get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Next":
 			play_sound("Wrong")
 			select_next.next();

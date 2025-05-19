@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bggg3fugjw6p2" path="res://Tut1_EMTN_Happy.tscn" id="5_66s0u"]
 [ext_resource type="PackedScene" uid="uid://b21gddhjacv8c" path="res://Tut1_EMTN_Sad.tscn" id="6_r7p5c"]
 [ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://American-Hard-Maple.jpg" id="8_r7p5c"]
-[ext_resource type="AudioStream" uid="uid://dk2crcl5d2t2h" path="res://audio/Tutorial 1.mp3" id="10_vdwyy"]
+[ext_resource type="AudioStream" uid="uid://dk2crcl5d2t2h" path="res://assets/audio/Tutorial 1.mp3" id="12_3fnku"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxy8c"]
 albedo_texture = ExtResource("3_hs60d")
@@ -501,7 +501,7 @@ mesh = SubResource("CylinderMesh_iv1c5")
 surface_material_override/0 = SubResource("StandardMaterial3D_gvjdq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_vdwyy")
+stream = ExtResource("12_3fnku")
 volume_db = -20.0
 
 [node name="teacher" parent="." instance=ExtResource("4_gfnts")]

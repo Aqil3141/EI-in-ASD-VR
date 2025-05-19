@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://cydyd48m1485l"]
 
-[ext_resource type="Texture2D" uid="uid://b2erhed18gbjl" path="res://images/fear/fear_0.jpg" id="1_b6tgm"]
-[ext_resource type="Texture2D" uid="uid://bgrs2wt57m5ie" path="res://images/fear/fear_1.jpg" id="2_2itb8"]
-[ext_resource type="Texture2D" uid="uid://doexcsj0v0i60" path="res://images/fear/fear_2.jpg" id="3_445i4"]
-[ext_resource type="Texture2D" uid="uid://d06n4s1qbphhg" path="res://images/fear/fear_3.jpg" id="4_j15gj"]
+[ext_resource type="Texture2D" uid="uid://b2erhed18gbjl" path="res://assets/images/fear/fear_0.jpg" id="1_b6tgm"]
+[ext_resource type="Texture2D" uid="uid://bgrs2wt57m5ie" path="res://assets/images/fear/fear_1.jpg" id="2_2itb8"]
+[ext_resource type="Texture2D" uid="uid://doexcsj0v0i60" path="res://assets/images/fear/fear_2.jpg" id="3_445i4"]
+[ext_resource type="Texture2D" uid="uid://d06n4s1qbphhg" path="res://assets/images/fear/fear_3.jpg" id="4_j15gj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vpcas"]
 

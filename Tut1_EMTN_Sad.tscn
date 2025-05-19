@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://b21gddhjacv8c"]
 
-[ext_resource type="Texture2D" uid="uid://crm2do6ac71m5" path="res://images/sad/sad_0.jpg" id="1_mvje3"]
-[ext_resource type="Texture2D" uid="uid://dincye77amuhb" path="res://images/sad/sad_1.jpg" id="2_ulm1i"]
-[ext_resource type="Texture2D" uid="uid://b0ddbkj4sy8wa" path="res://images/sad/sad_2.jpg" id="3_g6kkx"]
-[ext_resource type="Texture2D" uid="uid://esyb210nmq66" path="res://images/sad/sad_3.jpg" id="4_87nvm"]
+[ext_resource type="Texture2D" uid="uid://crm2do6ac71m5" path="res://assets/images/sad/sad_0.jpg" id="1_mvje3"]
+[ext_resource type="Texture2D" uid="uid://dincye77amuhb" path="res://assets/images/sad/sad_1.jpg" id="2_ulm1i"]
+[ext_resource type="Texture2D" uid="uid://b0ddbkj4sy8wa" path="res://assets/images/sad/sad_2.jpg" id="3_g6kkx"]
+[ext_resource type="Texture2D" uid="uid://esyb210nmq66" path="res://assets/images/sad/sad_3.jpg" id="4_87nvm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vpcas"]
 
