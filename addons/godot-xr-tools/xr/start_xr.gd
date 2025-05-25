@@ -66,6 +66,7 @@ func _ready() -> void:
 
 ## Initialize the XR interface
 func _initialize() -> bool:
+	
 	# Check for OpenXR interface
 	xr_interface = XRServer.find_interface('OpenXR')
 	if xr_interface:
@@ -75,7 +76,7 @@ func _initialize() -> bool:
 	xr_interface = XRServer.find_interface('WebXR')
 	if xr_interface:
 		return _setup_for_webxr()
-
+	
 	# No XR interface
 	xr_interface = null
 	print("No XR interface detected")

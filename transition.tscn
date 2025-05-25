@@ -1,0 +1,170 @@
+[gd_scene load_steps=10 format=3 uid="uid://bau1dk2b4j84o"]
+
+[ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="1_2gi1b"]
+[ext_resource type="Script" uid="uid://bwbytq7k70wy6" path="res://transition.gd" id="1_4r5tf"]
+[ext_resource type="Script" uid="uid://bq8n7b80fedla" path="res://menu.gd" id="3_4r5tf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4r5tf"]
+resource_local_to_scene = true
+size = Vector2(2, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1ap01"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7m3o"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_1ap01")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4r5tf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ap01"]
+bg_color = Color(0, 0.462745, 0.411765, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pj2mc"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_4r5tf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175695, 1.12125, 3.50669)
+light_energy = 0.5
+
+[node name="XROrigin3D" parent="." instance=ExtResource("1_2gi1b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.417895, 0.431292)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, -0.0498288, -0.698224, 0, 0.698224, -0.0498288, -0.175695, 1.12125, -0.970168)
+mesh = SubResource("PlaneMesh_4r5tf")
+skeleton = NodePath("../XROrigin3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_m7m3o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.496322, 0.0354201)
+collision_layer = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_4r5tf")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1156, 512)
+
+[node name="Play" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 544.0
+offset_top = 290.0
+offset_right = 584.0
+offset_bottom = 330.0
+script = ExtResource("3_4r5tf")
+
+[node name="Panel" type="Panel" parent="SubViewport/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -321.0
+offset_right = 613.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00203563
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ap01")
+
+[node name="Label" type="Label" parent="SubViewport/Play"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -298.0
+offset_right = 286.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "What would you like to play?"
+
+[node name="Scenarios" type="Label" parent="SubViewport/Play"]
+layout_mode = 0
+offset_left = -65.0
+offset_top = -26.0
+offset_right = 51.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 25
+text = "Scenarios:"
+
+[node name="Tutorial" type="Label" parent="SubViewport/Play"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -187.0
+offset_right = 72.0
+offset_bottom = -138.0
+theme_override_font_sizes/font_size = 25
+text = "Tutorials:"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewport/Play"]
+layout_mode = 0
+offset_left = -273.0
+offset_top = 31.0
+offset_right = 283.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="Scenario_1" type="Button" parent="SubViewport/Play/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Mall of Oman"
+
+[node name="Scenario_2" type="Button" parent="SubViewport/Play/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Rehabilitation Centre"
+
+[node name="Scenario_3" type="Button" parent="SubViewport/Play/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Play Area"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -127.0
+offset_right = 39.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="Tutorial_1" type="Button" parent="SubViewport/Play/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Tutorial 1"
+
+[node name="Tutorial_2" type="Button" parent="SubViewport/Play/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Tutorial 2"
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("PlaneMesh_pj2mc")
+
+[connection signal="button_down" from="SubViewport/Play/HBoxContainer/Tutorial_1" to="SubViewport/Play" method="_on_tutorial_1_button_down"]
+[connection signal="button_down" from="SubViewport/Play/HBoxContainer/Tutorial_2" to="SubViewport/Play" method="_on_tutorial_2_button_down"]

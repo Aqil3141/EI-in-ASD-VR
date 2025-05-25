@@ -8,8 +8,8 @@ enum ControllerSelectionMode {Hold, Toggle}
 @export var device_y_sensitivity: float = 1
 @export var scroll_sensitivity: float = 1
 @export var is_camera_height_limited: bool = true
-@export var min_camera_height: float = 0.5
-@export var max_camera_height: float = 2.0
+@export var min_camera_height: float = 0.0
+@export var max_camera_height: float = 0.0 #CHANGED
 
 var camera: XRCamera3D
 var left_controller: XRController3D

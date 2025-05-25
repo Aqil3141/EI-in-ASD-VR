@@ -52,7 +52,6 @@ func check_answer(selected: String):
 	else:
 		play_sound("Wrong")
 		return 0 #incorrect
-	
 
 func _physics_process(_delta: float) -> void:
 	
@@ -104,7 +103,9 @@ func btnPressedLeft(name_action:String) -> void:
 				next_question()
 		if targetObject and targetObject.name == "Proceed":
 			if get_tree().get_current_scene().name != "Tutorial_1":
-				get_tree().change_scene_to_file("res://menu.tscn")
+				
+				get_tree().change_scene_to_file("res://transition.tscn")
+				
 			else:
 				if get_tree().get_current_scene().has_node("Tutorial_1_1"):
 					get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.2.tscn")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dobyp1q0dd10x"]
+[gd_scene load_steps=7 format=3 uid="uid://dobyp1q0dd10x"]
 
 [ext_resource type="Script" uid="uid://bq8n7b80fedla" path="res://menu.gd" id="1_lti8b"]
 [ext_resource type="FontFile" uid="uid://bt8jhojm0i02a" path="res://comicz.ttf" id="2_ouk20"]
+[ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="3_mae5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
 bg_color = Color(0, 0.462745, 0.411765, 1)
@@ -34,6 +35,7 @@ grow_vertical = 2
 script = ExtResource("1_lti8b")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = -19.0
 offset_top = -6.0
 offset_right = 1181.0
@@ -96,6 +98,8 @@ theme_override_fonts/font = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_mae5d")
 text = "Options"
+
+[node name="XROrigin3D" parent="." instance=ExtResource("3_mae5d")]
 
 [connection signal="button_down" from="VBoxContainer/Play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="VBoxContainer/LoginPage" to="." method="_on_login_page_button_down"]

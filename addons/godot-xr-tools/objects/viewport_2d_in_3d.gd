@@ -446,7 +446,7 @@ func set_filter(new_filter: bool) -> void:
 # Screen size update handler
 func _update_screen_size() -> void:
 	$Screen.mesh.size = screen_size
-	$StaticBody3D.screen_size = screen_size
+	#$StaticBody3D.screen_size = screen_size #CHANGED
 	$StaticBody3D/CollisionShape3D.shape.size = Vector3(
 			screen_size.x,
 			screen_size.y,
@@ -536,7 +536,7 @@ func _update_render() -> void:
 
 		# Set the viewport size
 		$Viewport.size = viewport_size
-		$StaticBody3D.viewport_size = viewport_size
+		#$StaticBody3D.viewport_size = viewport_size
 
 		# Update our viewport texture, it will have changed
 		_dirty |= _DIRTY_ALBEDO

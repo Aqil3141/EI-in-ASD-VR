@@ -482,12 +482,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gjhq3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.651782, -0.467986, -0.596799, 0.287851, -0.88068, 0.376224, -0.701657, 0.0734272, 0.708722, -3.09942, 1.66401, 0.352554)
-light_energy = 0.1
+light_energy = 0.25
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67013, 0.567832, 1.28313)
-light_energy = 0.1
+light_energy = 0.25
 
 [node name="Tutorial_1_2" type="Label3D" parent="."]
 
