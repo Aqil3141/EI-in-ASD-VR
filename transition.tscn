@@ -166,5 +166,6 @@ text = "Tutorial 2"
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("PlaneMesh_pj2mc")
 
+[connection signal="button_down" from="SubViewport/Play/HBoxContainer2/Scenario_1" to="SubViewport/Play" method="_on_mall_button_down"]
 [connection signal="button_down" from="SubViewport/Play/HBoxContainer/Tutorial_1" to="SubViewport/Play" method="_on_tutorial_1_button_down"]
 [connection signal="button_down" from="SubViewport/Play/HBoxContainer/Tutorial_2" to="SubViewport/Play" method="_on_tutorial_2_button_down"]
