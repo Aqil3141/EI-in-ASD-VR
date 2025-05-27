@@ -1,30 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://uewvqhqm7a0g"]
+[gd_scene load_steps=12 format=3 uid="uid://uewvqhqm7a0g"]
 
 [ext_resource type="Texture2D" uid="uid://dmxa2chx3l1uj" path="res://assets/images/sad/basic_1.jpg" id="1_ga8qx"]
+[ext_resource type="Texture2D" uid="uid://cumgt8xo554o6" path="res://assets/images/sad/basic_0.jpg" id="1_p6qk2"]
 [ext_resource type="Texture2D" uid="uid://ch40kl157cxaq" path="res://assets/images/sad/basic_2.jpg" id="2_q3pvn"]
 [ext_resource type="Texture2D" uid="uid://debdlf3joambb" path="res://assets/images/sad/basic_3.jpg" id="5_ji2fd"]
-[ext_resource type="Texture2D" uid="uid://wwyfem4y2cfd" path="res://assets/images/sad/basic_4.jpg" id="7_8qx84"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q8p1"]
-albedo_texture = ExtResource("1_ga8qx")
+albedo_texture = ExtResource("1_p6qk2")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vpcas"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ru80"]
-albedo_texture = ExtResource("1_ga8qx")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga8qx"]
-albedo_texture = ExtResource("2_q3pvn")
+albedo_texture = ExtResource("1_ga8qx")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8v1ph"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji2fd"]
-albedo_texture = ExtResource("5_ji2fd")
+albedo_texture = ExtResource("2_q3pvn")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_viq0y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qx84"]
-albedo_texture = ExtResource("7_8qx84")
+albedo_texture = ExtResource("5_ji2fd")
 
 [node name="EmotionTutorialDisplay" type="Node3D"]
 
@@ -43,7 +40,6 @@ transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 
 rotation_order = 0
 material_override = SubResource("StandardMaterial3D_6q8p1")
 mesh = SubResource("PlaneMesh_vpcas")
-surface_material_override/0 = SubResource("StandardMaterial3D_2ru80")
 
 [node name="ImageCard_1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0.705495, 3.049, 1.268)
