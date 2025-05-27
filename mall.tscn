@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccjrwb84ticvg"]
+[gd_scene load_steps=20 format=3 uid="uid://ccjrwb84ticvg"]
 
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="1_cxcin"]
 [ext_resource type="Script" uid="uid://dap2ao77r8wbf" path="res://scripts/mall.gd" id="1_elnf1"]
-[ext_resource type="PackedScene" uid="uid://dbb84yxtrhfpi" path="res://assets/models/girl/girl.glb" id="2_2s7ec"]
+[ext_resource type="PackedScene" uid="uid://gxdxgs2jxogi" path="res://assets/models/girl/girl.glb" id="2_2s7ec"]
 [ext_resource type="AudioStream" uid="uid://bbggnents4wve" path="res://assets/audio/Welcome_Oman.mp3" id="2_8w8cr"]
 [ext_resource type="Script" uid="uid://btq2sl06uvmr" path="res://scripts/girl.gd" id="4_oih4b"]
+[ext_resource type="Texture2D" uid="uid://vx0o8gl33auu" path="res://assets/images/other/store.jpg" id="6_qdp1x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
 albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
@@ -23,6 +24,10 @@ size = Vector2(40, 40)
 [sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
 size = Vector3(40, 0.1, 40)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sx7q3"]
+albedo_texture = ExtResource("6_qdp1x")
+uv1_scale = Vector3(15, 1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
 albedo_color = Color(0.6, 0.6, 0.7, 1)
 
@@ -31,6 +36,11 @@ material = SubResource("StandardMaterial3D_wall")
 size = Vector2(40, 8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w8cr"]
+albedo_texture = ExtResource("6_qdp1x")
+uv1_scale = Vector3(15, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kw3qe"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
 albedo_color = Color(0.9, 0.9, 0.9, 1)
@@ -151,7 +161,7 @@ mesh = SubResource("PlaneMesh_qdp1x")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Node3D/Fear"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
+transform = Transform3D(1.2, 0, 5.96046e-08, 0, 1.2, 0, -5.96046e-08, 0, 1.2, 0.172342, -0.118981, 1.33769)
 shape = SubResource("BoxShape3D_sx7q3")
 
 [node name="Label3D" type="Label3D" parent="Node3D/Node3D/Fear"]
@@ -160,13 +170,13 @@ pixel_size = 0.01
 modulate = Color(0.554306, 0.529849, 0, 1)
 text = "Fear"
 
-[node name="girl" parent="Node3D" instance=ExtResource("2_2s7ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.788318, 0, 0.558192)
-script = ExtResource("4_oih4b")
-
-[node name="Label3D" type="Label3D" parent="Node3D/girl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898219, 1.53982, -0.248734)
+[node name="girl_text" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68654, 1.53982, 0.309458)
 modulate = Color(1, 0.376471, 1, 1)
+
+[node name="girl" parent="Node3D" instance=ExtResource("2_2s7ec")]
+transform = Transform3D(0.841511, 0, -0.54024, 0, 1, 0, 0.54024, 0, 0.841511, -0.788318, 0, 0.558192)
+script = ExtResource("4_oih4b")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -178,18 +188,29 @@ mesh = SubResource("PlaneMesh_floor")
 shape = SubResource("BoxShape3D_floor")
 
 [node name="WallFront" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4, -20)
+transform = Transform3D(10, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4, -15.2486)
+material_override = SubResource("StandardMaterial3D_sx7q3")
 mesh = SubResource("PlaneMesh_wall")
 surface_material_override/0 = SubResource("StandardMaterial3D_8w8cr")
 
 [node name="WallBack" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 20)
+transform = Transform3D(-10, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-07, -1, 4.37114e-08, 0, 4, 11.9908)
 mesh = SubResource("PlaneMesh_wall")
 surface_material_override/0 = SubResource("StandardMaterial3D_8w8cr")
+
+[node name="Ahead" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 2, -4.37114e-08, 1.91069e-15, 178.633, 4, 5.01328)
+mesh = SubResource("PlaneMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_kw3qe")
 
 [node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 8, 0)
 mesh = SubResource("PlaneMesh_ceiling")
+
+[node name="Behind" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -2, -4.37114e-08, 1.91069e-15, -104.217, 4, 5.01328)
+mesh = SubResource("PlaneMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_kw3qe")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.0784656, 0.766684, -0.637212, -0.0937008, 0.642025, 0.760936, 0.992504, 7.39473e-09, 0.122216, 0, 4.48147, 0)

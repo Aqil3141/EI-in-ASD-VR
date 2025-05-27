@@ -22,8 +22,8 @@ English,English,English
 Next,Next,التالي
 Welcome ,Welcome ,مرحباً 
 What would you like to play?,What would you like to play?,ماذا تريد أن تلعب؟
-Tutorials,Tutorials,الممارسات
-Senarios,Senarios,السيناريوهات
+Tutorials:,Tutorials:,الممارسات
+Scenarios:,Scenarios:,السيناريوهات
 Proceed,Proceed,تغيير المستوى
 "This emotion is ""Anger""",This emotion is Anger,هذه العاطفة هي الغضب
 "This emotion is ""Fear""",This emotion is Fear,هذه العاطفة هي الخوف
@@ -64,3 +64,20 @@ Mouth corners pulled downward",نصيحة: انتبه لزوايا الفم ال
 Back To Menu,Back To Menu,العودة إلى القائمة
 Customization,Customization,التخصيص
 Enter a username…,Enter a username...,أدخل اسم المستخدم…
+There's a young girl named Mariam standing nearby,There's a young girl named Mariam\nstanding nearby,هناك فتاة صغيرة اسمها مريم تقف في مكان قريب.
+Mariam appears to be lost Observe her closely,Mariam appears to be lost\nObserve her closely,"مريم تبدو تائهة، راقبها عن كثب."
+How do you think Mariam is feeling?,How do you think\nMariam is feeling?,ما رأيك بما تشعر به مريم؟
+Mom? Dad? Where are you?,Mom? Dad? Where are you?,أمي؟ أبي؟ أين أنت؟
+I... I can't find them…,I... I can't find them…,انا...لا استطيع العثور عليهم…
+Continue,Continue,التالي
+Welcome to the mall,Welcome to the mall,مرحبا بكم في المركز التجاري
+Happy,Happy,سعيد
+Anger,Anger,الغضب
+Fear,Fear,يخاف
+Sad,Sad,حزين
+Mariam does not seem happy She is not smiling,Mariam does not seem happy\nShe is not smiling,"مريم لا تبدو سعيدة، فهي لا تبتسم."
+Mariam may seem sad but do you think she is feeling something else?,Mariam may seem sad\nbut do you think she is feeling something else?,"قد تبدو ماري حزينة، لكن هل تعتقد أنها تشعر بشيء آخر؟"
+Correct Mariam is feeling fear Her hands are close to her body,Correct Mariam is feeling fear\nHer hands are close to her body,صحيح أن مريم تشعر بالخوف. يداها قريبتان من جسدها.
+Mariam does not seem angry Her eyebrows do not curl downwards,Mariam does not seem angry\nHer eyebrows do not curl downwards,ماري لا تبدو غاضبة. حواجبها لا تتجعد.
+Mom! Dad! I'm here!,Mom! Dad! I'm here!,أمي! أبي! أنا هنا!
+Press 'Continue' to move onto a different level,Press 'Continue' to move onto a different level,"انقر على زر ""تغيير المستوى"" للانتقال إلى الخطوة التالية."
