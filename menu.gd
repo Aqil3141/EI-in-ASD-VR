@@ -16,6 +16,7 @@ func _on_options_page_button_down() -> void:
 
 func _on_play_button_down() -> void:
 	get_tree().change_scene_to_file("res://Play.tscn")
+	
 
 func _on_tutorial_1_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.1.tscn")

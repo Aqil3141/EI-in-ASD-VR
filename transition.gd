@@ -35,8 +35,8 @@ func simulate_mouse_on_viewport(uv: Vector2) -> void:
 
 
 	#print("Simulating mouse at pixel position: ", pixel_pos)
-	var event = InputEventMouseMotion.new()
-	if $XROrigin3D/RightHandController.is_button_pressed("trigger"):
+	var event = InputEventMouseMotion.new() 
+	if $XROrigin3D/RightHandController.is_button_pressed("trigger") or $XROrigin3D/RightHandController.is_button_pressed("select_button"):
 		event = InputEventMouseButton.new()
 		event.button_index = MOUSE_BUTTON_LEFT
 		event.pressed = true

@@ -45,3 +45,17 @@ func play_sound():
 	player.volume_db = Globals.sound_volume
 	player.stream = emotion_sounds[count % 4]
 	player.play()
+
+@onready var raycast = get_node("/root/Tutorial_1/XROrigin3D/RightHandController/RayCast3D")
+var mesh : MeshInstance3D = null;
+func _physics_process(_delta):
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		
+		if collider is CollisionObject3D:
+			mesh = collider.get_node("MeshInstance3D")
+			mesh.get_active_material(0).metallic = 1.5
+	else:
+		if mesh != null:
+			mesh.get_active_material(0).metallic = 0
+			

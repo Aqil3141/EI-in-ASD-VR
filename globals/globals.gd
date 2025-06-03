@@ -73,6 +73,3 @@ func generate_question():
 
 func set_hand_color(value):
 	hand_color = value
-
-func get_hand_color():
-	return hand_color

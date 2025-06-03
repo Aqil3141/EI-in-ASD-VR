@@ -447,10 +447,10 @@ func set_filter(new_filter: bool) -> void:
 func _update_screen_size() -> void:
 	$Screen.mesh.size = screen_size
 	#$StaticBody3D.screen_size = screen_size #CHANGED
-	$StaticBody3D/CollisionShape3D.shape.size = Vector3(
-			screen_size.x,
-			screen_size.y,
-			0.02)
+	#$StaticBody3D/CollisionShape3D.shape.size = Vector3(
+	#		screen_size.x,
+	#		screen_size.y,
+	#		0.02)
 
 
 # Enabled update handler

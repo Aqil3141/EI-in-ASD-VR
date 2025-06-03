@@ -13,7 +13,18 @@ var cooldown_timer := 0.0
 var movement = false;
 var emotion = false;
 
+var mesh : MeshInstance3D = null;
+
 func _physics_process(delta):
+	if raycast.is_colliding():
+		var collider_object = raycast.get_collider()
+		#print(collider.name)
+		if collider_object is CollisionObject3D:
+			mesh = collider_object.get_node("MeshInstance3D")
+			mesh.get_active_material(0).metallic = 1.5
+	else:
+		if mesh != null:
+			mesh.get_active_material(0).metallic = 0
 	if cooldown_timer > 0:
 		cooldown_timer -= delta
 	if movement:
@@ -21,7 +32,7 @@ func _physics_process(delta):
 	if raycast.is_colliding():
 		
 		var collider = raycast.get_collider()
-		if collider.name == "Continue" and $XROrigin3D/RightHandController.is_button_pressed("trigger") and cooldown_timer <= 0 and !emotion:
+		if collider.name == "Continue" and ($XROrigin3D/RightHandController.is_button_pressed("trigger") or $XROrigin3D/RightHandController.is_button_pressed("select_button")) and cooldown_timer <= 0 and !emotion:
 			if system_sequence[count%len(system_sequence)] == "continue":
 				label.text = tr("Press 'Continue' to move onto a different level")
 				$Continue/Label3D.text = tr("Continue")
@@ -38,12 +49,12 @@ func _physics_process(delta):
 				$girl/AnimationPlayer.play("Armature_001|mixamo_com|Layer0")
 				$girl/AnimationPlayer.get_animation("Armature_001|mixamo_com|Layer0").loop = true
 				movement = true
-			elif randi_range(0, 3) == 1:
+			elif randi_range(0, 1) == 1:
 				$girl_text.text = tr(girl_sequence[count%len(girl_sequence)])
 			count += 1
 			start_cooldown()
 		if emotion:
-			if $XROrigin3D/RightHandController.is_button_pressed("trigger") and cooldown_timer <= 0:
+			if ($XROrigin3D/RightHandController.is_button_pressed("trigger") or $XROrigin3D/RightHandController.is_button_pressed("select_button")) and cooldown_timer <= 0:
 				if collider.name == "Happy":
 					label.text = tr("Mariam does not seem happy She is not smiling") 
 				if collider.name == "Sad":
@@ -60,10 +71,22 @@ func start_cooldown():
 
 func display_emotions():
 	$Continue.visible = false
+	$Continue/CollisionShape3D.disabled = true
 	emotion = true
 	$Node3D.visible = true
+	#collisions
+	$Node3D/Anger/CollisionShape3D.disabled = false
+	$Node3D/Happy/CollisionShape3D.disabled = false
+	$Node3D/Sad/CollisionShape3D.disabled = false
+	$Node3D/Fear/CollisionShape3D.disabled = false
 
 func undisplay_emotions():
 	$Continue.visible = true
+	$Continue/CollisionShape3D.disabled = false
 	emotion = false
 	$Node3D.visible = false
+	#collisions
+	$Node3D/Anger/CollisionShape3D.disabled = true
+	$Node3D/Happy/CollisionShape3D.disabled = true
+	$Node3D/Sad/CollisionShape3D.disabled = true
+	$Node3D/Fear/CollisionShape3D.disabled = true

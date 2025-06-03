@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ccjrwb84ticvg"]
+[gd_scene load_steps=28 format=3 uid="uid://ccjrwb84ticvg"]
 
 [ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="1_cxcin"]
 [ext_resource type="Script" uid="uid://dap2ao77r8wbf" path="res://scripts/mall.gd" id="1_elnf1"]
@@ -14,6 +14,30 @@ albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
 material = SubResource("StandardMaterial3D_jw8fm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sx7q3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdp1x"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sx7q3"]
+material = SubResource("StandardMaterial3D_qdp1x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ciruo"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3g5nr"]
+material = SubResource("StandardMaterial3D_ciruo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pepos"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7au8b"]
+material = SubResource("StandardMaterial3D_pepos")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u7o7"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1jclu"]
+material = SubResource("StandardMaterial3D_8u7o7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
 
@@ -63,11 +87,11 @@ autoplay = true
 transform = Transform3D(0.690504, 0, -0.723329, 0, 1, 0, 0.723329, 0, 0.690504, -1.43014, 0.847029, 2.94653)
 
 [node name="Label3D" type="Label3D" parent="Node3D"]
-transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 0.926949, 1.38503, 1.97495)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.926949, 1.38503, 1.97495)
 text = "Welcome to the mall"
 
 [node name="Continue" type="Area3D" parent="Node3D"]
-transform = Transform3D(-4.47035e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -4.47035e-08, 0.929494, 0.701002, 1.96392)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0.929494, 0.701002, 1.96392)
 collision_layer = 5
 collision_mask = 5
 
@@ -97,12 +121,13 @@ collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Node3D/Happy"]
 transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
-mesh = SubResource("PlaneMesh_qdp1x")
+mesh = SubResource("PlaneMesh_sx7q3")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Node3D/Happy"]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
 shape = SubResource("BoxShape3D_sx7q3")
+disabled = true
 
 [node name="Label3D" type="Label3D" parent="Node3D/Node3D/Happy"]
 transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
@@ -117,12 +142,13 @@ collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Node3D/Sad"]
 transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
-mesh = SubResource("PlaneMesh_qdp1x")
+mesh = SubResource("PlaneMesh_3g5nr")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Node3D/Sad"]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
 shape = SubResource("BoxShape3D_sx7q3")
+disabled = true
 
 [node name="Label3D" type="Label3D" parent="Node3D/Node3D/Sad"]
 transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
@@ -137,12 +163,13 @@ collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Node3D/Anger"]
 transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
-mesh = SubResource("PlaneMesh_qdp1x")
+mesh = SubResource("PlaneMesh_7au8b")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Node3D/Anger"]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
 shape = SubResource("BoxShape3D_sx7q3")
+disabled = true
 
 [node name="Label3D" type="Label3D" parent="Node3D/Node3D/Anger"]
 transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
@@ -157,12 +184,13 @@ collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Node3D/Fear"]
 transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
-mesh = SubResource("PlaneMesh_qdp1x")
+mesh = SubResource("PlaneMesh_1jclu")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Node3D/Fear"]
 transform = Transform3D(1.2, 0, 5.96046e-08, 0, 1.2, 0, -5.96046e-08, 0, 1.2, 0.172342, -0.118981, 1.33769)
 shape = SubResource("BoxShape3D_sx7q3")
+disabled = true
 
 [node name="Label3D" type="Label3D" parent="Node3D/Node3D/Fear"]
 transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)

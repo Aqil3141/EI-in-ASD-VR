@@ -479,4 +479,4 @@ static func _find_child(node : Node, type : String) -> Node:
 	return null
 
 func update_hand_color():
-	hand_material_override.albedo_color = Globals.get_hand_color()
+	hand_material_override.albedo_color = Globals.hand_color

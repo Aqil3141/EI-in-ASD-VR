@@ -16,3 +16,10 @@ func _ready():
 #     -> XROrigin3D (player_button.tscn) 
 func send_signal(String):
 	emit_signal("result_checked", String)
+
+func turn_off():
+	$Options.visible = false
+	$Options/Option_0/CollisionShape3D.disabled = true
+	$Options/Option_1/CollisionShape3D.disabled = true
+	$Options/Option_2/CollisionShape3D.disabled = true
+	$Options/Option_3/CollisionShape3D.disabled = true

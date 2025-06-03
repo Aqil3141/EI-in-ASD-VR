@@ -16,6 +16,7 @@ func _on_result_checked(count: String):
 		play_model_animation("Armature_003|mixamo_com|Layer0_002") #Have the NPC teacher move
 		$AudioStreamPlayer.play() #Play the audio cue
 		#Make buttons appear in front of player
+		get_parent().turn_off()
 		get_parent().get_node("Proceed").make_visible()
 		get_parent().get_node("Restart").make_visible()
 
