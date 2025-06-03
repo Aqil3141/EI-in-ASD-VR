@@ -104,18 +104,18 @@ func btnPressedLeft(name_action:String) -> void:
 		if targetObject and targetObject.name == "Proceed":
 			if get_tree().get_current_scene().name != "Tutorial_1":
 				
-				get_tree().change_scene_to_file("res://transition.tscn")
+				get_tree().change_scene_to_file("res://scenes/transition.tscn")
 				
 			else:
 				if get_tree().get_current_scene().has_node("Tutorial_1_1"):
 					get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.2.tscn")
 				else:
-					get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
+					get_tree().change_scene_to_file("res://scenes/tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Restart":
 			if get_tree().get_current_scene().has_node("Tutorial_1_2"):
 				get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.2.tscn")
 			else:
-				get_tree().change_scene_to_file("res://tutorial_scene_2.tscn")
+				get_tree().change_scene_to_file("res://scenes/tutorial_scene_2.tscn")
 		if targetObject and targetObject.name == "Next":
 			play_sound("Wrong")
 			select_next.next();

@@ -1,6 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://ccjrwb84ticvg"]
+[gd_scene load_steps=28 format=3 uid="uid://cuueq57j26k8i"]
 
-[ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="1_cxcin"]
+[ext_resource type="PackedScene" path="res://scenes/player_button.tscn" id="1_cxcin"]
 [ext_resource type="Script" uid="uid://dap2ao77r8wbf" path="res://scripts/mall.gd" id="1_elnf1"]
 [ext_resource type="PackedScene" uid="uid://gxdxgs2jxogi" path="res://assets/models/girl/girl.glb" id="2_2s7ec"]
 [ext_resource type="AudioStream" uid="uid://bbggnents4wve" path="res://assets/audio/Welcome_Oman.mp3" id="2_8w8cr"]

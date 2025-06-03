@@ -1,18 +1,40 @@
-[gd_scene load_steps=41 format=3 uid="uid://d0gmb16k6vwig"]
+[gd_scene load_steps=45 format=3 uid="uid://gitudj168pid"]
 
-[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_w5e7v"]
-[ext_resource type="PackedScene" uid="uid://cmdm1ejh7a8k4" path="res://selection.tscn" id="2_ljpkq"]
-[ext_resource type="Script" uid="uid://yx2x7dkknq75" path="res://guide_text.gd" id="3_avbro"]
-[ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="3_ljpkq"]
-[ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="4_avbro"]
-[ext_resource type="AudioStream" uid="uid://c3qm6rkvyulcc" path="res://assets/audio/Good job.mp3" id="5_cbl5u"]
-[ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://American-Hard-Maple.jpg" id="6_wvgr3"]
-[ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://assets/audio/Welcome.mp3" id="9_cbl5u"]
-[ext_resource type="PackedScene" uid="uid://bc1kex5nc6okl" path="res://teach.tscn" id="9_wvgr3"]
-[ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://window.jpg" id="10_cbl5u"]
-[ext_resource type="Texture2D" uid="uid://eyve01qccsof" path="res://window_2.jpg" id="11_cqwwp"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" path="res://scenes/player_button.tscn" id="2_66s0u"]
+[ext_resource type="Script" uid="uid://crjodwiruewk5" path="res://next.gd" id="3_66s0u"]
+[ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://assets/images/other/window.jpg" id="3_hs60d"]
+[ext_resource type="PackedScene" path="res://scenes/Tut1_EMTN_Angry.tscn" id="3_p7vtb"]
+[ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://eyve01qccsof" path="res://assets/images/other/window_2.jpg" id="4_3fnku"]
+[ext_resource type="PackedScene" path="res://scenes/teach.tscn" id="4_gfnts"]
+[ext_resource type="PackedScene" path="res://scenes/Tut1_EMTN_Fear.tscn" id="4_shk2l"]
+[ext_resource type="PackedScene" path="res://scenes/Tut1_EMTN_Happy.tscn" id="5_66s0u"]
+[ext_resource type="PackedScene" path="res://scenes/Tut1_EMTN_Sad.tscn" id="6_r7p5c"]
+[ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://assets/images/other/American-Hard-Maple.jpg" id="8_r7p5c"]
+[ext_resource type="AudioStream" uid="uid://dk2crcl5d2t2h" path="res://assets/audio/Tutorial 1.mp3" id="12_3fnku"]
 
-[sub_resource type="GDScript" id="GDScript_jw8fm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxy8c"]
+albedo_texture = ExtResource("3_hs60d")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qbv4d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbv4d"]
+shading_mode = 0
+albedo_color = Color(0.605274, 0.605274, 0.605274, 1)
+albedo_texture = ExtResource("4_3fnku")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4mwej"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r7p5c"]
+material = SubResource("StandardMaterial3D_jw8fm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vdwyy"]
+
+[sub_resource type="GDScript" id="GDScript_r7p5c"]
 script/source = "extends Area3D
 
 func make_visible():
@@ -20,57 +42,48 @@ func make_visible():
 	$CollisionShape3D.disabled = false
 	$CollisionShape3D.visible = true
 	$Label3D.visible = true
-	get_parent().get_node(\"Options\").visible = false
-
-@onready var raycast = get_node(\"/root/Main/Node3D/Main/XROrigin3D/RightHandController/RayCast3D\")
-var mesh : MeshInstance3D = null;
-func _physics_process(_delta):
-	if raycast.is_colliding():
-		var collider = raycast.get_collider()
-		#print(collider.name)
-		if collider is CollisionObject3D:
-			mesh = collider.get_node(\"MeshInstance3D\")
-			mesh.get_active_material(0).metallic = 1.5
-	else:
-		if mesh != null:
-			mesh.get_active_material(0).metallic = 0
+	
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbl5u"]
 albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_wvgr3"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_vdwyy"]
 material = SubResource("StandardMaterial3D_cbl5u")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_avbro"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cqs6p"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh7o0"]
-albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_gjhq3"]
-material = SubResource("StandardMaterial3D_qh7o0")
+[sub_resource type="BoxShape3D" id="BoxShape3D_hs60d"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5vw27"]
 points = PackedVector3Array(0.5, 0.5, 0.25, 0.5, 0.5, -0.25, -0.5, 0.5, 0.25, 0.5, -0.5, 0.25, 0.5, -0.5, -0.25, -0.5, 0.5, -0.25, -0.5, -0.5, 0.25, -0.5, -0.5, -0.25)
 
 [sub_resource type="QuadMesh" id="QuadMesh_h2yge"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvgr3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eswwf"]
 albedo_color = Color(0.392157, 0.196078, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_1bvp3"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfnts"]
+albedo_color = Color(0.392157, 0.196078, 0, 1)
+
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_h2yge"]
 albedo_color = Color(0, 0.678431, 0, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_cqs6p"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_3fnku"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iv1c5"]
+albedo_color = Color(1, 0.890798, 0.797172, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_color = Color(0.340502, 0.315433, 0.312128, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7mycd"]
+material = SubResource("StandardMaterial3D_lquwl")
 size = Vector2(10, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqwwp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vdwyy"]
 shading_mode = 0
-albedo_texture = ExtResource("6_wvgr3")
+albedo_texture = ExtResource("8_r7p5c")
 albedo_texture_force_srgb = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
@@ -79,113 +92,112 @@ size = Vector3(1, 0.620239, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_272bh"]
 size = Vector3(1, 1, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqs6p"]
-albedo_color = Color(0.630054, 0.329657, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7vtb"]
+albedo_color = Color(0.631373, 0.329412, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
 transparency = 1
-albedo_texture = ExtResource("3_ljpkq")
+albedo_texture = ExtResource("4_1bvp3")
 emission = Color(0.0253638, 0.0253638, 0.0253638, 1)
 emission_energy_multiplier = 8.19
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_cbl5u"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_hs60d"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3lx7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fnku"]
 albedo_color = Color(0.640651, 0.312368, 0, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_kso5c"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_iv1c5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wm12"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvjdq"]
 albedo_color = Color(1, 1, 0.0352941, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kso5c"]
-albedo_texture = ExtResource("10_cbl5u")
+[node name="Tutorial_1" type="Node3D"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_2wm12"]
+[node name="StartXR" parent="." instance=ExtResource("1_ig7tw")]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7xqn"]
-shading_mode = 0
-albedo_color = Color(0.605274, 0.605274, 0.605274, 1)
-albedo_texture = ExtResource("11_cqwwp")
+[node name="XROrigin3D" parent="." instance=ExtResource("2_66s0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280382, 0.357177, -2.01106)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qh7o0"]
+[node name="Window" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, -4.89731, 1.099, 1.31489)
+material_override = SubResource("StandardMaterial3D_rxy8c")
+mesh = SubResource("PlaneMesh_qbv4d")
+skeleton = NodePath("../Selection")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ujacl"]
+[node name="Window_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, -0.5, 2.18557e-08, 0, -2.18557e-08, -0.5, 0.5, -2.18557e-08, 9.55343e-16, 4.78039, 1.099, 1.31489)
+material_override = SubResource("StandardMaterial3D_qbv4d")
+mesh = SubResource("PlaneMesh_4mwej")
+skeleton = NodePath("../Window")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjhq3"]
-albedo_color = Color(1, 0.890798, 0.797172, 1)
+[node name="Selection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.567832, -4.75644)
 
-[node name="Main" type="Node3D"]
-
-[node name="StartXR" parent="." instance=ExtResource("1_w5e7v")]
-
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974716, 0, -2.98587)
-
-[node name="Main" parent="Node3D" instance=ExtResource("2_ljpkq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574014, 0, 0.189098)
-
-[node name="XROrigin3D" parent="Node3D/Main" instance=ExtResource("4_avbro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0151701, 0.362587, 0.808997)
-
-[node name="Label3D" type="Label3D" parent="Node3D/Main"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86765, 1.25569, -1.96822)
-text = "Welcome to 
-tutorial stage 2"
-script = ExtResource("3_avbro")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node3D/Main/Label3D"]
-stream = ExtResource("5_cbl5u")
-
-[node name="Proceed" type="Area3D" parent="Node3D/Main"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0122211, 1.4218, -1.46185)
+[node name="Next" type="Area3D" parent="Selection"]
+transform = Transform3D(0.488336, 0, -0.107368, 0, 0.5, 0, 0.107368, 0, 0.488336, 1.14645, 0.816472, 0.0212588)
+visible = false
 collision_layer = 5
 collision_mask = 5
-script = SubResource("GDScript_jw8fm")
+script = ExtResource("3_66s0u")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Main/Proceed"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/Next"]
 transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0.0850248, -0.11746, 0.640837)
-visible = false
-mesh = SubResource("PlaneMesh_wvgr3")
+mesh = SubResource("PlaneMesh_r7p5c")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Main/Proceed"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756502, -0.0699031, 0.652789)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/Next"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
+shape = SubResource("BoxShape3D_vdwyy")
+
+[node name="Label3D" type="Label3D" parent="Selection/Next"]
+transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
+pixel_size = 0.01
+modulate = Color(0.554306, 0.529849, 0, 1)
+text = "Next"
+
+[node name="Proceed" type="Area3D" parent="Selection"]
+transform = Transform3D(0.488336, 0, -0.107368, 0, 0.5, 0, 0.107368, 0, 0.488336, 1.15189, 0.0634496, 0.0025053)
+collision_layer = 5
+collision_mask = 5
+script = SubResource("GDScript_r7p5c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/Proceed"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0.0850248, -0.11746, 0.640837)
 visible = false
-shape = SubResource("BoxShape3D_avbro")
+mesh = SubResource("PlaneMesh_vdwyy")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/Proceed"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756505, -0.00753689, 0.652789)
+visible = false
+shape = SubResource("BoxShape3D_hs60d")
 disabled = true
 
-[node name="Label3D" type="Label3D" parent="Node3D/Main/Proceed"]
+[node name="Label3D" type="Label3D" parent="Selection/Proceed"]
 transform = Transform3D(0.998953, -1.49012e-08, -0.0457465, 0, 1, 0, 0.0457466, 2.6077e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
 visible = false
 pixel_size = 0.01
 modulate = Color(0.554306, 0.529849, 0, 1)
 text = "Proceed"
 
-[node name="Restart" type="Area3D" parent="Node3D/Main"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0429384, 0.809084, -1.46757)
-script = SubResource("GDScript_jw8fm")
+[node name="Anger" parent="Selection" instance=ExtResource("3_p7vtb")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.06892, -0.792965)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Main/Restart"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0455958, -0.415846, 0.117398)
+[node name="Fear" parent="Selection" instance=ExtResource("4_shk2l")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.07255, -0.792543)
 visible = false
-shape = SubResource("BoxShape3D_cqs6p")
-disabled = true
 
-[node name="Label3D" type="Label3D" parent="Node3D/Main/Restart"]
-transform = Transform3D(0.998953, -1.49012e-08, -0.0457465, 0, 1, 0, 0.0457466, 2.6077e-08, 0.998953, 0.0683686, -0.318864, 0.715017)
+[node name="Happy" parent="Selection" instance=ExtResource("5_66s0u")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.07067, -0.780695)
 visible = false
-pixel_size = 0.01
-modulate = Color(0.554306, 0.529849, 0, 1)
-text = "Restart"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Main/Restart"]
-transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0.0314287, -0.351914, 0.653867)
+[node name="Sad" parent="Selection" instance=ExtResource("6_r7p5c")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -1.08214, -0.794193)
 visible = false
-mesh = SubResource("PlaneMesh_gjhq3")
-skeleton = NodePath("../CollisionShape3D")
+
+[node name="Emotion" type="AudioStreamPlayer" parent="Selection"]
 
 [node name="Walls" type="StaticBody3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0372841, 2.26742, 4.99535)
@@ -201,28 +213,28 @@ transform = Transform3D(1, 0, 0, 0, -0.25, 5.46392e-09, 0, -2.18557e-08, -0.0625
 layers = 7
 mesh = SubResource("QuadMesh_h2yge")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
+surface_material_override/0 = SubResource("StandardMaterial3D_eswwf")
 
 [node name="Wall-2" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.0625, 0.00834813, -0.102316, -0.990817)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
+surface_material_override/0 = SubResource("StandardMaterial3D_gfnts")
 
 [node name="Wall-3" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.37114e-08, 0, -0.0625, 0, 0.25, 0, 1, 0, -2.73196e-09, 0.484384, -0.103286, -0.50712)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
+surface_material_override/0 = SubResource("StandardMaterial3D_gfnts")
 
 [node name="Wall-4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.37114e-08, 0, 0.0625, 0, 0.25, 0, -1, 0, -2.73196e-09, -0.492173, -0.103649, -0.503689)
 layers = 7
 mesh = SubResource("QuadMesh_1bvp3")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_wvgr3")
+surface_material_override/0 = SubResource("StandardMaterial3D_gfnts")
 
 [node name="Wall-5" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(0.7, 0, 0, 0, 0.175, 0, 0, 0, 0.044, 0.0399737, -0.114894, -0.982482)
@@ -230,6 +242,21 @@ layers = 7
 mesh = SubResource("QuadMesh_h2yge")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ORMMaterial3D_h2yge")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.651782, -0.467986, -0.596799, 0.287851, -0.88068, 0.376224, -0.701657, 0.0734272, 0.708722, -3.09942, 1.66401, 0.352554)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67013, 0.567832, 1.28313)
+light_energy = 0.354
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, -4.99529, -0.216877, 0, 0.216877, -4.99529, 0.0314999, 2.28679, 0.0135105)
+mesh = SubResource("PlaneMesh_3fnku")
+skeleton = NodePath("../Floor")
+surface_material_override/0 = SubResource("StandardMaterial3D_iv1c5")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0314999, 0, 0)
@@ -239,9 +266,9 @@ collision_mask = 7
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, 0)
 layers = 7
-mesh = SubResource("PlaneMesh_cqs6p")
+mesh = SubResource("PlaneMesh_7mycd")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_cqwwp")
+surface_material_override/0 = SubResource("StandardMaterial3D_vdwyy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(10, 0, 0, 0, 6, 0, 0, 0, 10, 0.063302, -1.82908, -0.0128775)
@@ -253,9 +280,9 @@ collision_layer = 7
 collision_mask = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000119925, 0.0157284, -1.17476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
 mesh = SubResource("BoxMesh_272bh")
-surface_material_override/0 = SubResource("StandardMaterial3D_cqs6p")
+surface_material_override/0 = SubResource("StandardMaterial3D_p7vtb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
@@ -460,52 +487,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16899)
 shape = SubResource("ConvexPolygonShape3D_5vw27")
 
-[node name="teacher" parent="." instance=ExtResource("9_wvgr3")]
-transform = Transform3D(0.249687, 0, 0.968327, 0, 1, 0, -0.968327, 0, 0.249687, -1.95812, 0, -4.06754)
-
-[node name="Welcome_Message" type="AudioStreamPlayer" parent="teacher"]
-stream = ExtResource("9_cbl5u")
-volume_db = -20.0
-autoplay = true
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24704, 0.71434, -3.76628)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(0.000418858, -1, 0, 1, 0.000418858, 0, 0, 0, 0.5, 0.53928, 0, 2.54862)
-mesh = SubResource("PlaneMesh_cbl5u")
-surface_material_override/0 = SubResource("StandardMaterial3D_o3lx7")
+mesh = SubResource("PlaneMesh_hs60d")
+surface_material_override/0 = SubResource("StandardMaterial3D_3fnku")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/MeshInstance3D"]
 transform = Transform3D(0.08, 3.47754e-05, -3.34837e-05, 3.47759e-05, -0.00302768, 0.0799427, 3.34832e-05, -0.0799427, -0.00302769, 0.210877, 0.0499897, -0.792035)
-mesh = SubResource("CylinderMesh_kso5c")
-surface_material_override/0 = SubResource("StandardMaterial3D_2wm12")
+mesh = SubResource("CylinderMesh_iv1c5")
+surface_material_override/0 = SubResource("StandardMaterial3D_gvjdq")
 
-[node name="Window" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, -4.89731, 1.099, 1.31489)
-material_override = SubResource("StandardMaterial3D_kso5c")
-mesh = SubResource("PlaneMesh_2wm12")
-skeleton = NodePath("../Selection")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_3fnku")
+volume_db = -20.0
 
-[node name="Window_2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-08, -0.5, 2.18557e-08, 0, -2.18557e-08, -0.5, 0.5, -2.18557e-08, 9.55343e-16, 4.78039, 1.099, 1.31489)
-material_override = SubResource("StandardMaterial3D_y7xqn")
-mesh = SubResource("PlaneMesh_qh7o0")
-skeleton = NodePath("../Window")
-
-[node name="Ceiling" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, -4.99529, -0.216877, 0, 0.216877, -4.99529, 0.0314999, 2.28679, 0.0135105)
-mesh = SubResource("PlaneMesh_ujacl")
-skeleton = NodePath("../Floor")
-surface_material_override/0 = SubResource("StandardMaterial3D_gjhq3")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.651782, -0.467986, -0.596799, 0.287851, -0.88068, 0.376224, -0.701657, 0.0734272, 0.708722, -3.09942, 1.66401, 0.352554)
-light_energy = 0.3
-shadow_enabled = true
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67013, 0.567832, 1.28313)
-light_energy = 0.3
-
-[connection signal="ready" from="Node3D/Main/Label3D/AudioStreamPlayer" to="Node3D/Main/Label3D" method="audio_level"]
+[node name="teacher" parent="." instance=ExtResource("4_gfnts")]
+transform = Transform3D(0.655202, 0, -0.755454, 0, 1, 0, 0.755454, 0, 0.655202, 2.64905, 0, -3.6285)

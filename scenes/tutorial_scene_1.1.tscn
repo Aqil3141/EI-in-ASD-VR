@@ -1,18 +1,18 @@
 [gd_scene load_steps=45 format=3 uid="uid://cmg414675ych8"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ws36q"]
-[ext_resource type="PackedScene" uid="uid://dot3f8f8ehy4w" path="res://player_button.tscn" id="2_gm6xf"]
-[ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://window.jpg" id="3_3o13s"]
-[ext_resource type="Texture2D" uid="uid://eyve01qccsof" path="res://window_2.jpg" id="4_mhhfe"]
+[ext_resource type="PackedScene" path="res://scenes/player_button.tscn" id="2_gm6xf"]
+[ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://assets/images/other/window.jpg" id="3_3o13s"]
+[ext_resource type="Texture2D" uid="uid://eyve01qccsof" path="res://assets/images/other/window_2.jpg" id="4_mhhfe"]
 [ext_resource type="Script" uid="uid://crjodwiruewk5" path="res://next.gd" id="5_vwytt"]
 [ext_resource type="PackedScene" uid="uid://hwi213xdhifu" path="res://scenes/Tut1.1_EMTN_Angry.tscn" id="6_ws36q"]
 [ext_resource type="PackedScene" uid="uid://jjksn6pk54jh" path="res://scenes/Tut1.1_EMTN_Fear.tscn" id="7_61mx3"]
 [ext_resource type="PackedScene" uid="uid://d0bph0scmunby" path="res://scenes/Tut1.1_EMTN_Happy.tscn" id="8_t3ffj"]
 [ext_resource type="PackedScene" uid="uid://uewvqhqm7a0g" path="res://scenes/Tut1.1_EMTN_Sad.tscn" id="9_t224k"]
-[ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://American-Hard-Maple.jpg" id="10_k2qlj"]
+[ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://assets/images/other/American-Hard-Maple.jpg" id="10_k2qlj"]
 [ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="11_qqldq"]
 [ext_resource type="AudioStream" uid="uid://dk2crcl5d2t2h" path="res://assets/audio/Tutorial 1.mp3" id="12_m44kt"]
-[ext_resource type="PackedScene" uid="uid://bc1kex5nc6okl" path="res://teach.tscn" id="13_4t8dy"]
+[ext_resource type="PackedScene" path="res://scenes/teach.tscn" id="13_4t8dy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxy8c"]
 albedo_texture = ExtResource("3_3o13s")

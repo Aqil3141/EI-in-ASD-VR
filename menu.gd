@@ -9,23 +9,23 @@ func _ready():
 
 		
 func _on_login_page_button_down() -> void:
-	get_tree().change_scene_to_file("res://login.tscn")
+	get_tree().change_scene_to_file("res://scenes/login.tscn")
 	
 func _on_options_page_button_down() -> void:
-	get_tree().change_scene_to_file("res://options.tscn")
+	get_tree().change_scene_to_file("res://scenes/options.tscn")
 
 func _on_play_button_down() -> void:
-	get_tree().change_scene_to_file("res://Play.tscn")
+	get_tree().change_scene_to_file("res://scenes/Play.tscn")
 	
 
 func _on_tutorial_1_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.1.tscn")
 
 func _on_tutorial_2_button_down() -> void:
-	get_tree().change_scene_to_file("res://tutorial_scene_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.tscn")
 
 func _on_back_button_down() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	
 func _on_mall_button_down() -> void:
-	get_tree().change_scene_to_file("res://mall.tscn")
+	get_tree().change_scene_to_file("res://scenes/mall.tscn")

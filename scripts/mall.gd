@@ -38,7 +38,7 @@ func _physics_process(delta):
 				$Continue/Label3D.text = tr("Continue")
 				$Continue/Label3D.font_size = 17
 			elif system_sequence[count%len(system_sequence)] == "move":
-				get_tree().change_scene_to_file("res://transition.tscn")
+				get_tree().change_scene_to_file("res://scenes/transition.tscn")
 			elif system_sequence[count%len(system_sequence)] != "display":
 				label.text = tr(system_sequence[count]) 
 			else:

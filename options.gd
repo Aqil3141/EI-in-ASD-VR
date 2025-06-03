@@ -7,16 +7,16 @@ func _ready():
 		$Panel/sound_slider.value = Globals.sound_volume
 	
 func _on_language_button_down() -> void:
-	get_tree().change_scene_to_file("res://language.tscn")
+	get_tree().change_scene_to_file("res://scenes/language.tscn")
 
 func _on_back_to_music_button_down() -> void:
-	get_tree().change_scene_to_file("res://music.tscn")
+	get_tree().change_scene_to_file("res://scenes/music.tscn")
 
 func _on_back_to_menu_button_down() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	
 func _on_back_to_customize_button_down() -> void:
-	get_tree().change_scene_to_file("res://customize.tscn")
+	get_tree().change_scene_to_file("res://scenes/customize.tscn")
 	
 func music_volume_change(music: float) -> void:
 	Globals.music_volume = music;

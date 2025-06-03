@@ -9,10 +9,10 @@ func set_color():
 	refresh_hand_model()
 
 func _on_back_to_menu_button_down() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func refresh_hand_model():
-	var hand_path = preload("res://hand_custom.tscn")
+	var hand_path = preload("res://scenes/hand_custom.tscn")
 	var viewport = $SubViewportContainer/SubViewport
 
 	var old_hand = viewport.get_child(0)
