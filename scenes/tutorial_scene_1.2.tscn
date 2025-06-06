@@ -1,14 +1,14 @@
 [gd_scene load_steps=41 format=3 uid="uid://b5k00c0khhnni"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_w5e7v"]
-[ext_resource type="PackedScene" path="res://scenes/selection.tscn" id="2_ljpkq"]
+[ext_resource type="PackedScene" uid="uid://cmdm1ejh7a8k4" path="res://scenes/selection.tscn" id="2_ljpkq"]
 [ext_resource type="Script" uid="uid://yx2x7dkknq75" path="res://guide_text.gd" id="3_avbro"]
 [ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="3_ljpkq"]
-[ext_resource type="PackedScene" path="res://scenes/player_button.tscn" id="4_avbro"]
+[ext_resource type="PackedScene" uid="uid://cvpusctm6binl" path="res://scenes/player_button.tscn" id="4_avbro"]
 [ext_resource type="AudioStream" uid="uid://c3qm6rkvyulcc" path="res://assets/audio/Good job.mp3" id="5_cbl5u"]
 [ext_resource type="Texture2D" uid="uid://658nrjcoycqy" path="res://assets/images/other/American-Hard-Maple.jpg" id="6_wvgr3"]
 [ext_resource type="AudioStream" uid="uid://dnr5h2ivonmrf" path="res://assets/audio/Welcome.mp3" id="9_cbl5u"]
-[ext_resource type="PackedScene" path="res://scenes/teach.tscn" id="9_wvgr3"]
+[ext_resource type="PackedScene" uid="uid://bc1kex5nc6okl" path="res://scenes/teach.tscn" id="9_wvgr3"]
 [ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://assets/images/other/window.jpg" id="10_cbl5u"]
 [ext_resource type="Texture2D" uid="uid://eyve01qccsof" path="res://assets/images/other/window_2.jpg" id="11_cqwwp"]
 
@@ -20,9 +20,10 @@ func make_visible():
 	$CollisionShape3D.disabled = false
 	$CollisionShape3D.visible = true
 	$Label3D.visible = true
-	get_parent().get_node(\"Options\").visible = false
+	#get_parent().get_node(\"Options\").visible = false
 
 @onready var raycast = get_node(\"/root/Main/Node3D/Main/XROrigin3D/RightHandController/RayCast3D\")
+@onready var controller = get_node(\"/root/Main/Node3D/Main/XROrigin3D/RightHandController\")
 var mesh : MeshInstance3D = null;
 func _physics_process(_delta):
 	if raycast.is_colliding():
@@ -31,6 +32,11 @@ func _physics_process(_delta):
 		if collider is CollisionObject3D:
 			mesh = collider.get_node(\"MeshInstance3D\")
 			mesh.get_active_material(0).metallic = 1.5
+			if (controller.is_button_pressed(\"trigger\") or controller.is_button_pressed(\"select_button\")):
+				if collider and collider.name == \"Proceed\":
+					get_tree().change_scene_to_file(\"res://scenes/transition.tscn\")
+				elif collider and collider.name == \"Restart\":
+					get_tree().change_scene_to_file(\"res://scenes/tutorial_scene_1.2.tscn\")
 	else:
 		if mesh != null:
 			mesh.get_active_material(0).metallic = 0
@@ -140,7 +146,7 @@ script = ExtResource("3_avbro")
 stream = ExtResource("5_cbl5u")
 
 [node name="Proceed" type="Area3D" parent="Node3D/Main"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0122211, 1.4218, -1.46185)
+transform = Transform3D(0.427551, 0, -0.25923, 0, 0.5, 0, 0.25923, 0, 0.427551, 1.48068, 1.34694, -2.09788)
 collision_layer = 5
 collision_mask = 5
 script = SubResource("GDScript_jw8fm")
@@ -165,7 +171,7 @@ modulate = Color(0.554306, 0.529849, 0, 1)
 text = "Proceed"
 
 [node name="Restart" type="Area3D" parent="Node3D/Main"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0429384, 0.809084, -1.46757)
+transform = Transform3D(0.427551, 0, -0.25923, 0, 0.5, 0, 0.25923, 0, 0.427551, 1.50992, 0.734219, -2.08684)
 script = SubResource("GDScript_jw8fm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Main/Restart"]

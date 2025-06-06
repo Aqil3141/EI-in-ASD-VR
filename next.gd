@@ -48,13 +48,26 @@ func play_sound():
 
 @onready var raycast = get_node("/root/Tutorial_1/XROrigin3D/RightHandController/RayCast3D")
 var mesh : MeshInstance3D = null;
+var collider = null;
+@onready var controller = get_node("/root/Tutorial_1/XROrigin3D/RightHandController")
 func _physics_process(_delta):
 	if raycast.is_colliding():
-		var collider = raycast.get_collider()
+		collider = raycast.get_collider()
 		
 		if collider is CollisionObject3D:
 			mesh = collider.get_node("MeshInstance3D")
 			mesh.get_active_material(0).metallic = 1.5
+		if (controller.is_button_pressed("trigger") or controller.is_button_pressed("select_button")):
+			if collider and collider.name == "Proceed":
+				if get_tree().current_scene.scene_file_path == "res://scenes/tutorial_scene_1.tscn":
+					get_tree().change_scene_to_file("res://scenes/tutorial_scene_2.tscn")
+				else:
+					get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.2.tscn")
+			elif collider and collider.name == "Restart":
+				if get_tree().current_scene.scene_file_path == "res://scenes/tutorial_scene_1.tscn":
+					get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.tscn")
+				else:
+					get_tree().change_scene_to_file("res://scenes/tutorial_scene_1.1.tscn")
 	else:
 		if mesh != null:
 			mesh.get_active_material(0).metallic = 0
