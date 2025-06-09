@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://btq2sl06uvmr" path="res://scripts/girl.gd" id="4_oih4b"]
 [ext_resource type="Texture2D" uid="uid://vx0o8gl33auu" path="res://assets/images/other/store.jpg" id="6_qdp1x"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ijf8"]
 albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qdp1x"]
-material = SubResource("StandardMaterial3D_jw8fm")
+material = SubResource("StandardMaterial3D_7ijf8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sx7q3"]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ipuk21w7hlou"
 path.s3tc="res://.godot/imported/angry_1.jpg-86603817db3d9bb6ba524523e1adf5d3.s3tc.ctex"
+path.etc2="res://.godot/imported/angry_1.jpg-86603817db3d9bb6ba524523e1adf5d3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/angry/angry_1.jpg"
-dest_files=["res://.godot/imported/angry_1.jpg-86603817db3d9bb6ba524523e1adf5d3.s3tc.ctex"]
+dest_files=["res://.godot/imported/angry_1.jpg-86603817db3d9bb6ba524523e1adf5d3.s3tc.ctex", "res://.godot/imported/angry_1.jpg-86603817db3d9bb6ba524523e1adf5d3.etc2.ctex"]
 
 [params]
 

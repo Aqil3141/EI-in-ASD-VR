@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="asd vr"
-run/main_scene="uid://dobyp1q0dd10x"
+run/main_scene="uid://b67eof4iucagv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -68,6 +68,7 @@ locale/translations=PackedStringArray("res://languages.en.translation", "res://l
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 
 [xr]
 

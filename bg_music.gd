@@ -10,7 +10,7 @@ func _ready():
 	# Load the music and enable looping on the stream
 	var stream = preload("res://assets/audio/music.mp3")  # Replace with your actual path
 	stream.loop = true
-	player.volume_db = linear_to_db(0.01)
+	player.volume_db = linear_to_db(0.1)
 	# Assign the stream and start playback
 	player.stream = stream
 	player.bus = "Music"  # Optional: use a dedicated audio bus if desired

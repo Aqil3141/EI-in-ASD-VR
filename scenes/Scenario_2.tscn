@@ -1,0 +1,189 @@
+[gd_scene load_steps=20 format=3 uid="uid://c44wm1erwket7"]
+
+[ext_resource type="Script" uid="uid://daec66f1cjv2y" path="res://scripts/scenario_2.gd" id="1_3540j"]
+[ext_resource type="PackedScene" uid="uid://cvpusctm6binl" path="res://scenes/player_button.tscn" id="1_kibsl"]
+[ext_resource type="VideoStream" path="res://assets/video/scenario_2.ogv" id="3_okxcu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3540j"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_okxcu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fbdwx"]
+viewport_path = NodePath("TV/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4pal"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_fbdwx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdp1x"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fbdwx"]
+material = SubResource("StandardMaterial3D_qdp1x")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4pal"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ciruo"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y81ua"]
+material = SubResource("StandardMaterial3D_ciruo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pepos"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pmvde"]
+material = SubResource("StandardMaterial3D_pepos")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u7o7"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vet0x"]
+material = SubResource("StandardMaterial3D_8u7o7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw8fm"]
+albedo_color = Color(0.360784, 0.733333, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n4pal"]
+material = SubResource("StandardMaterial3D_jw8fm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y81ua"]
+
+[node name="Scenario2" type="Node3D"]
+script = ExtResource("1_3540j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999883, 0.0153234, 0, -0.0153234, 0.999883, 0.00298238, 1.22331, 2.1183)
+
+[node name="XROrigin3D" parent="." instance=ExtResource("1_kibsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.672503, 1.45381)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.00377131, -2.38419e-07, -0.658609)
+mesh = SubResource("PlaneMesh_3540j")
+
+[node name="TV" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00298238, 1.22331, -2.981)
+mesh = SubResource("PlaneMesh_okxcu")
+surface_material_override/0 = SubResource("StandardMaterial3D_n4pal")
+
+[node name="SubViewport" type="SubViewport" parent="TV"]
+handle_input_locally = false
+size = Vector2i(626, 850)
+render_target_update_mode = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TV/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("3_okxcu")
+autoplay = true
+loop = true
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.414693, 0, 0.909961, 0, 1, 0, -0.909961, 0, 0.414693, -0.708684, 2.00158, -2.25182)
+
+[node name="Happy" type="Area3D" parent="Node3D"]
+transform = Transform3D(-4.47035e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -4.47035e-08, 1.67266, -0.960992, 1.69831)
+collision_layer = 5
+collision_mask = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Happy"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
+mesh = SubResource("PlaneMesh_fbdwx")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Happy"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
+shape = SubResource("BoxShape3D_n4pal")
+
+[node name="Label3D" type="Label3D" parent="Node3D/Happy"]
+transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
+pixel_size = 0.01
+modulate = Color(0.554306, 0.529849, 0, 1)
+text = "Happy"
+
+[node name="Sad" type="Area3D" parent="Node3D"]
+transform = Transform3D(-4.47035e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -4.47035e-08, 1.7037, -1.00431, 2.93356)
+collision_layer = 5
+collision_mask = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Sad"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
+mesh = SubResource("PlaneMesh_y81ua")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Sad"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
+shape = SubResource("BoxShape3D_n4pal")
+
+[node name="Label3D" type="Label3D" parent="Node3D/Sad"]
+transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
+pixel_size = 0.01
+modulate = Color(0.554306, 0.529849, 0, 1)
+text = "Sad"
+
+[node name="Anger" type="Area3D" parent="Node3D"]
+transform = Transform3D(-4.47035e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -4.47035e-08, 1.7037, -1.50933, 2.93356)
+collision_layer = 5
+collision_mask = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Anger"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
+mesh = SubResource("PlaneMesh_pmvde")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Anger"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
+shape = SubResource("BoxShape3D_n4pal")
+
+[node name="Label3D" type="Label3D" parent="Node3D/Anger"]
+transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
+pixel_size = 0.01
+modulate = Color(0.554306, 0.529849, 0, 1)
+text = "Anger"
+
+[node name="Fear" type="Area3D" parent="Node3D"]
+transform = Transform3D(-4.47035e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -4.47035e-08, 1.80667, -1.6055, 1.68719)
+collision_layer = 5
+collision_mask = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Fear"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
+mesh = SubResource("PlaneMesh_vet0x")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Fear"]
+transform = Transform3D(1.2, 0, 5.96046e-08, 0, 1.2, 0, -5.96046e-08, 0, 1.2, 0.172342, -0.118981, 1.33769)
+shape = SubResource("BoxShape3D_n4pal")
+
+[node name="Label3D" type="Label3D" parent="Node3D/Fear"]
+transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
+pixel_size = 0.01
+modulate = Color(0.554306, 0.529849, 0, 1)
+text = "Fear"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.809017, 0, 0.587785, 0, 1, 0, -0.587785, 0, 0.809017, -1.92404, 1.40201, -2.26229)
+text = "What does the girl feel?"
+
+[node name="Continue" type="Area3D" parent="."]
+transform = Transform3D(0.404509, 0, -0.293893, 0, 0.5, 0, 0.293893, 0, 0.404509, 1.69924, 0.701002, -2.0286)
+visible = false
+collision_layer = 5
+collision_mask = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Continue"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.3, 0, 0.7, -1.31134e-08, 0.0850248, -0.11746, 0.640837)
+mesh = SubResource("PlaneMesh_n4pal")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Continue"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0756506, -0.118981, 0.65279)
+shape = SubResource("BoxShape3D_y81ua")
+disabled = true
+
+[node name="Label3D" type="Label3D" parent="Continue"]
+transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 0.0457466, 2.67034e-08, 0.998953, 0.0685759, -0.128714, 0.717712)
+pixel_size = 0.01
+modulate = Color(0.554306, 0.529849, 0, 1)
+text = "Next"

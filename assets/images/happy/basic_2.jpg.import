@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4eu2raycnixa"
 path.s3tc="res://.godot/imported/basic_2.jpg-810e3dba15d3dc699d3550989dfe7e97.s3tc.ctex"
+path.etc2="res://.godot/imported/basic_2.jpg-810e3dba15d3dc699d3550989dfe7e97.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/happy/basic_2.jpg"
-dest_files=["res://.godot/imported/basic_2.jpg-810e3dba15d3dc699d3550989dfe7e97.s3tc.ctex"]
+dest_files=["res://.godot/imported/basic_2.jpg-810e3dba15d3dc699d3550989dfe7e97.s3tc.ctex", "res://.godot/imported/basic_2.jpg-810e3dba15d3dc699d3550989dfe7e97.etc2.ctex"]
 
 [params]
 

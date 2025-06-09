@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cegea1v2yxudh"
 path.s3tc="res://.godot/imported/basic_3.jpg-e5b4c6ded538b45dfdb888e5feeda901.s3tc.ctex"
+path.etc2="res://.godot/imported/basic_3.jpg-e5b4c6ded538b45dfdb888e5feeda901.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/fear/basic_3.jpg"
-dest_files=["res://.godot/imported/basic_3.jpg-e5b4c6ded538b45dfdb888e5feeda901.s3tc.ctex"]
+dest_files=["res://.godot/imported/basic_3.jpg-e5b4c6ded538b45dfdb888e5feeda901.s3tc.ctex", "res://.godot/imported/basic_3.jpg-e5b4c6ded538b45dfdb888e5feeda901.etc2.ctex"]
 
 [params]
 
