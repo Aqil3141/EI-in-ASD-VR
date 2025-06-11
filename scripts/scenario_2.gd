@@ -24,7 +24,7 @@ func _physics_process(delta):
 		var collider = raycast.get_collider()
 		if ($XROrigin3D/RightHandController.is_button_pressed("trigger") or $XROrigin3D/RightHandController.is_button_pressed("select_button")) and cooldown_timer <= 0:
 			if collider.name == "Happy":
-				label.text = tr("Correct she is feeling happy \nbecause she got a gift") 
+				label.text = tr("Correct she is feeling happy because she got a gift") 
 				undisplay_emotions()
 			if collider.name == "Sad":
 				label.text = tr("She does not seem sad")

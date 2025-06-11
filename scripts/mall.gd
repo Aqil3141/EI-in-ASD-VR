@@ -5,7 +5,7 @@ extends Node3D
 @onready var player := $AudioStreamPlayer
 
 var system_sequence = [tr("There's a young girl named Mariam standing nearby"), tr("Mariam appears to be lost Observe her closely"), tr("How do you think Mariam is feeling?"), "display", "continue", "move"]
-var girl_sequence = [tr("Mom? Dad? Where are you?"), tr("I... I can't find them...")] 
+var girl_sequence = [tr("Mom? Dad? Where are you?"), tr("I can't find them")] 
 var count = 0
 
 # Timer variables
@@ -56,7 +56,7 @@ func _physics_process(delta):
 				$girl/AnimationPlayer.play("Armature_001|mixamo_com|Layer0")
 				$girl/AnimationPlayer.get_animation("Armature_001|mixamo_com|Layer0").loop = true
 				movement = true
-			elif randi_range(0, 1) == 1:
+			else:
 				$girl_text.text = tr(girl_sequence[count%len(girl_sequence)])
 			count += 1
 			start_cooldown()

@@ -68,7 +68,7 @@ There's a young girl named Mariam standing nearby,There's a young girl named Mar
 Mariam appears to be lost Observe her closely,Mariam appears to be lost\nObserve her closely,"مريم تبدو تائهة، راقبها عن كثب."
 How do you think Mariam is feeling?,How do you think\nMariam is feeling?,ما رأيك بما تشعر به مريم؟
 Mom? Dad? Where are you?,Mom? Dad? Where are you?,أمي؟ أبي؟ أين أنت؟
-I... I can't find them…,I... I can't find them…,انا...لا استطيع العثور عليهم…
+I can't find them,I... I can't find them…,انا...لا استطيع العثور عليهم…
 Continue,Continue,التالي
 Welcome to the mall,Welcome to the mall,مرحبا بكم في المركز التجاري
 Happy,Happy,سعيد
@@ -81,3 +81,8 @@ Correct Mariam is feeling fear Her hands are close to her body,Correct Mariam is
 Mariam does not seem angry Her eyebrows do not curl downwards,Mariam does not seem angry\nHer eyebrows do not curl downwards,ماري لا تبدو غاضبة. حواجبها لا تتجعد.
 Mom! Dad! I'm here!,Mom! Dad! I'm here!,أمي! أبي! أنا هنا!
 Press 'Continue' to move onto a different level,Press 'Continue' to move onto a different level,"انقر على زر ""تغيير المستوى"" للانتقال إلى الخطوة التالية."
+Correct she is feeling happy because she got a gift,Correct she is feeling happy \nbecause she got a gift,صحيح أنها تشعر بالسعادة لأنها حصلت على هدية
+She does not seem sad,She does not seem sad,لا يبدو أنها حزينة
+She does not seem afraid,She does not seem afraid,لا يبدو أنها خائفة
+She does not seem angry,She does not seem angry,لا يبدو أنها غاضبة
+What does the girl feel?,What does the girl feel?,ماذا تشعر الفتاة؟

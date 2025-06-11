@@ -1,10 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://c44wm1erwket7"]
+[gd_scene load_steps=22 format=3 uid="uid://c44wm1erwket7"]
 
 [ext_resource type="Script" uid="uid://daec66f1cjv2y" path="res://scripts/scenario_2.gd" id="1_3540j"]
 [ext_resource type="PackedScene" uid="uid://cvpusctm6binl" path="res://scenes/player_button.tscn" id="1_kibsl"]
 [ext_resource type="VideoStream" path="res://assets/video/scenario_2.ogv" id="3_okxcu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3540j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okxcu"]
+albedo_color = Color(0.682353, 0.258824, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_okxcu"]
 
@@ -49,6 +52,11 @@ material = SubResource("StandardMaterial3D_jw8fm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y81ua"]
 
+[sub_resource type="Environment" id="Environment_fbdwx"]
+resource_local_to_scene = true
+background_mode = 1
+background_color = Color(0.529412, 0.807843, 0.921569, 1)
+
 [node name="Scenario2" type="Node3D"]
 script = ExtResource("1_3540j")
 
@@ -61,6 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.672503, 1.45381)
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.00377131, -2.38419e-07, -0.658609)
 mesh = SubResource("PlaneMesh_3540j")
+surface_material_override/0 = SubResource("StandardMaterial3D_okxcu")
 
 [node name="TV" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00298238, 1.22331, -2.981)
@@ -163,7 +172,7 @@ modulate = Color(0.554306, 0.529849, 0, 1)
 text = "Fear"
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(0.809017, 0, 0.587785, 0, 1, 0, -0.587785, 0, 0.809017, -1.92404, 1.40201, -2.26229)
+transform = Transform3D(0.809017, 0, 0.587785, 0, 1, 0, -0.587785, 0, 0.809017, -2.46484, 1.40201, -2.30348)
 text = "What does the girl feel?"
 
 [node name="Continue" type="Area3D" parent="."]
@@ -187,3 +196,6 @@ transform = Transform3D(0.998953, -1.22287e-09, -0.0457466, 0, 1, -2.67314e-08, 
 pixel_size = 0.01
 modulate = Color(0.554306, 0.529849, 0, 1)
 text = "Next"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fbdwx")
