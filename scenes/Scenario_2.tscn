@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daec66f1cjv2y" path="res://scripts/scenario_2.gd" id="1_3540j"]
 [ext_resource type="PackedScene" uid="uid://cvpusctm6binl" path="res://scenes/player_button.tscn" id="1_kibsl"]
-[ext_resource type="VideoStream" path="res://assets/video/scenario_2.ogv" id="3_okxcu"]
+[ext_resource type="VideoStream" uid="uid://cv54m5p17yfpr" path="res://assets/video/scenario_2.ogv" id="3_okxcu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3540j"]
 

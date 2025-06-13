@@ -124,7 +124,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 # Perform OpenXR setup
 func _setup_for_openxr() -> bool:
 	print("OpenXR: Configuring interface")
-
+	
 	# Set the render target size multiplier
 	xr_interface.render_target_size_multiplier = render_target_size_multiplier
 
@@ -133,9 +133,10 @@ func _setup_for_openxr() -> bool:
 		print("OpenXR: Initializing interface")
 		if not xr_interface.initialize():
 			push_error("OpenXR: Failed to initialize")
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 			xr_failed_to_initialize.emit()
 			return false
-
+	
 	# Connect the OpenXR events
 	xr_interface.connect("session_begun", _on_openxr_session_begun)
 	xr_interface.connect("session_visible", _on_openxr_visible_state)
@@ -151,7 +152,7 @@ func _setup_for_openxr() -> bool:
 	# Switch the viewport to XR
 	get_xr_viewport().transparent_bg = enable_passthrough
 	get_xr_viewport().use_xr = true
-
+	
 	# Report success
 	return true
 

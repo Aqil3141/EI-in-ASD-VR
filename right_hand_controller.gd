@@ -50,7 +50,7 @@ func check_answer(selected: String):
 		play_sound("correct")
 		return 1 #correct
 	else:
-		play_sound("Wrong")
+		play_sound("wrong")
 		return 0 #incorrect
 
 func _physics_process(_delta: float) -> void:
@@ -101,7 +101,9 @@ func btnPressedLeft(name_action:String) -> void:
 			var selected_emotion = targetObject.get_meta("emotion")
 			if check_answer(selected_emotion):
 				next_question()
+			else:
+				play_sound("wrong")
 		if targetObject and targetObject.name == "Next":
-			play_sound("Wrong")
+			play_sound("wrong") #For game responsiveness 
 			select_next.next();
 		
