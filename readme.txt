@@ -14,7 +14,7 @@ The project was developed as part of RMIT’s Programming Project 1 course.
 
 Release Notes:
 -----------------
-Version: 1.71  
+Version: 1.72  
 Start Date: 08 March 2025  
 End Date: 16 June 2025
 
@@ -54,7 +54,7 @@ Controls:
    - Look around: Move movement
    - Left hand: Hold **Q** and move mouse
    - Right hand: Hold **E** and move mouse
-   - Interact: **Left-click**
+   - Interact: Hold Q or E and press **Left-click**
 
 Note: The `.exe` export does not currently support keyboard/mouse input; fallback is only available through Godot editor play mode.
 
