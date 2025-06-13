@@ -14,7 +14,7 @@ The project was developed as part of RMIT’s Programming Project 1 course.
 
 Release Notes:
 -----------------
-Version: 1.72  
+Version: 1.73  
 Start Date: 08 March 2025  
 End Date: 16 June 2025
 

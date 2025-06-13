@@ -5,7 +5,8 @@ func _color_pick(new_color: Color):
 	color = new_color
 
 func set_color():
-	Globals.set_hand_color(color)
+	if color != null:
+		Globals.set_hand_color(color)
 	refresh_hand_model()
 
 func _on_back_to_menu_button_down() -> void:
