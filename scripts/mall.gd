@@ -1,22 +1,29 @@
 extends Node3D
 
+#Node references set on scene load. 'onready' 
+#as the scene needs to load in first before referencing 
 @onready var raycast := $XROrigin3D/RightHandController/RayCast3D
 @onready var label := $Label3D
 @onready var player := $AudioStreamPlayer
 
+#dialog interaction sequences for simplicity
+#includes keys to help with internal tracking
 var system_sequence = [tr("There's a young girl named Mariam standing nearby"), tr("Mariam appears to be lost Observe her closely"), tr("How do you think Mariam is feeling?"), "display", "continue", "move"]
 var girl_sequence = [tr("Mom? Dad? Where are you?"), tr("I can't find them")] 
 var count = 0
 
-# Timer variables
+# Timer variables to prevent rapid interactions and bugs
 var cooldown_time := 0.5 # seconds
 var cooldown_timer := 0.0
+#flags
 var movement = false;
 var emotion = false;
 var audio_stream;
 var mesh : MeshInstance3D = null;
 
+# Called every physics frame; handles raycasting, highlighting, and movement
 func _physics_process(delta):
+	# Highlight object if raycast hits a CollisionObject3D
 	if raycast.is_colliding():
 		var collider_object = raycast.get_collider()
 		#print(collider.name)
@@ -26,14 +33,18 @@ func _physics_process(delta):
 	else:
 		if mesh != null:
 			mesh.get_active_material(0).metallic = 0
+	# Countdown timer for cooldown-based input
 	if cooldown_timer > 0:
 		cooldown_timer -= delta
+	# Move the girl when triggered (it looks like she found her parents in the game)
 	if movement:
 		$girl.position = $girl.position.move_toward(Vector3(-500, 0, 500), 2 * delta)
+	
 	if raycast.is_colliding():
-		
 		var collider = raycast.get_collider()
+		# When "Continue" is selected and not in emotion selection state
 		if collider.name == "Continue" and ($XROrigin3D/RightHandController.is_button_pressed("trigger") or $XROrigin3D/RightHandController.is_button_pressed("select_button")) and cooldown_timer <= 0 and !emotion:
+			#proceed with regular dialogue
 			if system_sequence[count%len(system_sequence)] == "continue":
 				label.text = tr("Press 'Continue' to move onto a different level")
 				audio_stream = load("res://assets/audio/System_mall_3.mp3")
@@ -49,6 +60,7 @@ func _physics_process(delta):
 				player.stream = audio_stream
 				player.play()
 			else:
+				#trigger emotion state once first part of the dialogue is over
 				display_emotions()
 			if $Continue/Label3D.text == tr("Continue"):
 				$girl_text.text = tr("Mom! Dad! I'm here!")
@@ -60,6 +72,7 @@ func _physics_process(delta):
 				$girl_text.text = tr(girl_sequence[count%len(girl_sequence)])
 			count += 1
 			start_cooldown()
+		# Handle emotion button interaction
 		if emotion:
 			if ($XROrigin3D/RightHandController.is_button_pressed("trigger") or $XROrigin3D/RightHandController.is_button_pressed("select_button")) and cooldown_timer <= 0:
 				if collider.name == "Happy":
@@ -79,9 +92,11 @@ func _physics_process(delta):
 				player.play()
 				start_cooldown()
 
+# Resets the cooldown timer
 func start_cooldown():
 	cooldown_timer = cooldown_time
 
+# Displays emotion options (Happy, Sad, Fear, Anger) for user interaction
 func display_emotions():
 	$Continue.visible = false
 	$Continue/CollisionShape3D.disabled = true
@@ -93,6 +108,7 @@ func display_emotions():
 	$Node3D/Sad/CollisionShape3D.disabled = false
 	$Node3D/Fear/CollisionShape3D.disabled = false
 
+# Hides emotion options (Happy, Sad, Fear, Anger) from user interaction
 func undisplay_emotions():
 	$Continue.visible = true
 	$Continue/CollisionShape3D.disabled = false

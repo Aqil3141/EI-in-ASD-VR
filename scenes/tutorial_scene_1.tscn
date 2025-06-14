@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cvpusctm6binl" path="res://scenes/player_button.tscn" id="2_66s0u"]
-[ext_resource type="Script" uid="uid://crjodwiruewk5" path="res://next.gd" id="3_66s0u"]
+[ext_resource type="Script" uid="uid://crjodwiruewk5" path="res://scripts/next.gd" id="3_66s0u"]
 [ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://assets/images/other/window.jpg" id="3_hs60d"]
 [ext_resource type="PackedScene" uid="uid://cxrn2jc3vcuri" path="res://scenes/Tut1_EMTN_Angry.tscn" id="3_p7vtb"]
 [ext_resource type="Texture2D" uid="uid://dnu5bx278k4qa" path="res://image-removebg-preview.png" id="4_1bvp3"]

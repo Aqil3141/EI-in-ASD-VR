@@ -1,5 +1,6 @@
 extends Area3D
 
+#Turns the current object visible for players to see (made during early development and  can be optimized)
 func make_visible():
 	$MeshInstance3D.visible = true
 	$CollisionShape3D.disabled = false

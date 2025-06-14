@@ -17,6 +17,8 @@ func _ready():
 func send_signal(String):
 	emit_signal("result_checked", String)
 
+#Command for setting this entire scene to invisible
+#Used so that this scene is not interactable when placed into other scenes
 func turn_off():
 	$Options.visible = false
 	$Options/Option_0/CollisionShape3D.disabled = true

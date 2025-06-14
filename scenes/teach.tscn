@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc1kex5nc6okl"]
 
 [ext_resource type="PackedScene" uid="uid://bo03wh1ljyv2p" path="res://teacher.glb" id="1_l63hk"]
-[ext_resource type="Script" uid="uid://blune07nvuyim" path="res://teach.gd" id="2_lmgl8"]
+[ext_resource type="Script" uid="uid://blune07nvuyim" path="res://scripts/teach.gd" id="2_lmgl8"]
 
 [node name="teacher" instance=ExtResource("1_l63hk")]
 script = ExtResource("2_lmgl8")

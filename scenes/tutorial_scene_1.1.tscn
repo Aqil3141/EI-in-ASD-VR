@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cvpusctm6binl" path="res://scenes/player_button.tscn" id="2_gm6xf"]
 [ext_resource type="Texture2D" uid="uid://mt0uh1t1d15j" path="res://assets/images/other/window.jpg" id="3_3o13s"]
 [ext_resource type="Texture2D" uid="uid://eyve01qccsof" path="res://assets/images/other/window_2.jpg" id="4_mhhfe"]
-[ext_resource type="Script" uid="uid://crjodwiruewk5" path="res://next.gd" id="5_vwytt"]
+[ext_resource type="Script" uid="uid://crjodwiruewk5" path="res://scripts/next.gd" id="5_vwytt"]
 [ext_resource type="PackedScene" uid="uid://hwi213xdhifu" path="res://scenes/Tut1.1_EMTN_Angry.tscn" id="6_ws36q"]
 [ext_resource type="PackedScene" uid="uid://jjksn6pk54jh" path="res://scenes/Tut1.1_EMTN_Fear.tscn" id="7_61mx3"]
 [ext_resource type="PackedScene" uid="uid://d0bph0scmunby" path="res://scenes/Tut1.1_EMTN_Happy.tscn" id="8_t3ffj"]

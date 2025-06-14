@@ -1,5 +1,11 @@
 extends RayCast3D
 
+#Code not used in this version
+#Clients wanted a responsive game so an initial idea was to have
+#a line be drawn from the player to whereever they were pointing
+#This turned out to be difficult and instead responsive
+#buttons were used (where the buttons turn darker if hovered over)
+
 var mesh := ImmediateMesh.new()
 var mesh_instance := MeshInstance3D.new()
 

@@ -13,5 +13,6 @@ func _ready():
 	player.volume_db = linear_to_db(0.1)
 	# Assign the stream and start playback
 	player.stream = stream
-	player.bus = "Music"  # Optional: use a dedicated audio bus if desired
+	#Separate audio bus so that main audio bus can play sound effects and audio prompts
+	player.bus = "Music" 
 	player.play()

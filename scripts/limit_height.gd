@@ -1,4 +1,8 @@
 extends Node3D
+#Test script for future development maybe
+#When using VR the height is a bit whack as taller players
+#may see the world differently from shorter players
+#this script was made to fix that however it is not part of the current version
 
 # Attach to CameraRig (parent of the camera)
 @export var fixed_y := 0.5  # Desired eye height in meters

@@ -1,11 +1,15 @@
 extends Node3D
 
+#node references
 @onready var raycast := $XROrigin3D/RightHandController/RayCast3D
-@onready var screen_viewport := $SubViewport  # Your 2D Viewport
-@onready var screen_mesh := $MeshInstance3D  # The MeshInstance3D with Viewport texture
+@onready var screen_viewport := $SubViewport 
+@onready var screen_mesh := $MeshInstance3D  
 
-@export var screen_size := Vector2(1156, 512)  # Adjust to your Viewport resolution
+# The resolution of the SubViewport. Should match the actual Viewport size.
+@export var screen_size := Vector2(1156, 512) 
 
+# Called every physics frame
+# Detects if the raycast is hitting the UI screen mesh and simulates mouse interaction
 func _physics_process(delta):
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
@@ -49,5 +53,5 @@ func simulate_mouse_on_viewport(uv: Vector2) -> void:
 		event.button_mask = 0
 		event.global_position = pixel_pos
 	
-	
+	# Send the input event to the 2D Viewport for UI interaction
 	screen_viewport.push_input(event, true)

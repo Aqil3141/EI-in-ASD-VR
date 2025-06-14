@@ -107,3 +107,4 @@ func btnPressedLeft(name_action:String) -> void:
 			play_sound("wrong") #For game responsiveness 
 			select_next.next();
 		
+#This script is used for the right hand and raycast nodes

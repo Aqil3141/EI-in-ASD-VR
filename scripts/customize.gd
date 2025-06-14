@@ -1,0 +1,29 @@
+extends Control
+
+var color;
+
+# Called when a new color is picked from the color picker
+func _color_pick(new_color: Color):
+	color = new_color
+
+# Applies the selected color to the global hand var and calls a function to refresh the preview
+func set_color():
+	if color != null:
+		Globals.set_hand_color(color)
+	refresh_hand_model()
+
+func _on_back_to_menu_button_down() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+# Refreshes the hand model displayed in the SubViewport
+func refresh_hand_model():
+	var hand_path = preload("res://scenes/hand_custom.tscn") # Get reference to the viewport node
+	var viewport = $SubViewportContainer/SubViewport 
+
+	var old_hand = viewport.get_child(0) 
+	if old_hand:
+		old_hand.queue_free() # Remove the old hand model
+
+	var new_hand = hand_path.instantiate() # Instantiate a new hand model
+	new_hand.name = "Hands"
+	viewport.add_child(new_hand) # Add the new hand model to the viewport

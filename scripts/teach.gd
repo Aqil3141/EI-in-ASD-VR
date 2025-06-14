@@ -1,5 +1,9 @@
 extends Node
 
+# Create signal to emit when an animation finishes
+# Due to inexperience, this method was used to keep the character model
+#in a specific position after animation. Without this feature the model
+#stays in the same position that the animation ends on.
 signal animation_done(animation_name: String)
 
 

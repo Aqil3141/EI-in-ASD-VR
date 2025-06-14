@@ -9,14 +9,19 @@ signal result_checked(is_correct: bool)
 	#controller = ctrl
 	#controller.set_question_data(current_question)
 
+#Starts a scene with four pictures displayed
 func _ready():
 	display_pictures()
 
+#In tutorial levels this changes the pictures and question to make a new question with corresponding pictures
+#The function is used internally (tip: use shift+ctrl+f and then search for the function name) and count variable is used internally for tracking
+#can probably be optimized better but this was created during the early stages of development and functionally works
 func generate_new_question():
 	current_question = Globals.generate_question()
 	count += 1
 	get_parent().send_signal(str(count))
 
+#Used for setting a new question with their pictures
 func display_pictures():
 	$CurrentQuestion.text = current_question["question"]
 	

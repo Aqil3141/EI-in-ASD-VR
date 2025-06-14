@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dne1bglxptgox"]
 
-[ext_resource type="Script" uid="uid://csg8y2ylpbiri" path="res://customize.gd" id="1_jngtt"]
+[ext_resource type="Script" uid="uid://csg8y2ylpbiri" path="res://scripts/customize.gd" id="1_jngtt"]
 [ext_resource type="FontFile" uid="uid://bt8jhojm0i02a" path="res://comicz.ttf" id="1_vau1m"]
 [ext_resource type="PackedScene" uid="uid://c3di00bq6wejd" path="res://scenes/hand_custom.tscn" id="2_col36"]
 

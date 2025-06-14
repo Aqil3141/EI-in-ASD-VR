@@ -1,5 +1,7 @@
 extends Control
 
+#Automatically allow for mouse input in the 2D screens
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
