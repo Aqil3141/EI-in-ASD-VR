@@ -14,7 +14,7 @@ The project was developed as part of RMIT’s Programming Project 1 course.
 
 Release Notes:
 -----------------
-Version: 1.73  
+Version: 1.75  
 Start Date: 08 March 2025  
 End Date: 16 June 2025
 
@@ -70,6 +70,7 @@ Developed by:
 - Cameron Mitchell (s3971747)  
 - Mahdi Mohamadi (s3965422)  
 - Jonathan Tan (s3946564)
+- Daniel Burrell (Former Team Member)
 
 Mentored by: James Harland  
 
