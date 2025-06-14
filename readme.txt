@@ -14,7 +14,7 @@ The project was developed as part of RMIT’s Programming Project 1 course.
 
 Release Notes:
 -----------------
-Version: 1.75  
+Version: 1.76  
 Start Date: 08 March 2025  
 End Date: 16 June 2025
 
@@ -47,6 +47,21 @@ Within Godot Engine:
 - Then press F5 to launch the application
 - If you are not using a VR headset, a popup ALERT will appear which you just need to press OK to (This is just to remind you that a headset is not connected)
 - If a popup for "Files have been modified outside Godot" appear, you can press "Reload from disk"
+- Godot may ask to fix dependencies which you can click to fix (This will let Godot reimport the assets and then allow you to run the game)
+
+Installation and Running for RMIT Assessment:
+---------------------------------------------
+This installation and running instruction is specifically if you are working with a submission folder provided to you by the
+HuDiNI537 team. You can follow this instead:
+
+1. Within the submission folder provided you can run the Godot_v4.4-stable_win64.exe to open the Godot Engine
+2. If you are not on a windows machine then download and install the **Godot 4.4** engine from https://godotengine.org/download/archive/4.4-stable/ (choose 'Standard' version for your device)
+3. Extract the 'HuDiNI537-source.zip' file to get the folder within
+4. From the Godot 4.4 engine, click Import in the top left and select the folder you extracted.
+5. You will need to open the project in edit mode and will have to click disable '.blend' (this appears if you do not have blender in your system)
+6. You will need to click fix dependencies as Godot would need to reimport the assets in your system 
+7. Once dependencies are fixed, click F5 or play in the top right which will launch the application (click OK to any alerts and reload from disk to any popups)
+8. This installation assumes you do not have a VR headset connected. For step by step instructions check "HuDiNI537-demo.pdf" where you can find more detailed instructions
 
 Controls:
 - **VR mode**: Use Meta Quest 3 controllers for interaction and hand tracking
